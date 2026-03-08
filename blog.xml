@@ -3066,7 +3066,7 @@ Begin time warp...
 ###How to refactor your code to aid in unit testing
 One of the biggest problems that occur with legacy code is the problem of testability.  Many times developers are afraid to make the simplest changes to an existing project since they are unfamiliar with the code base and they don’t want to introduce any unforeseen problems.  In my past life we used to use win forms for our testing or even a console application (even if we ever used them we usually built and pushed out to development/staging/or even production and clicked a few buttons on the web form and crossed our fingers).  One way to help alleviate this pain is to introduce some unit tests into the system before you do any potentially breaking changes.  By doing this you setup a base line for a particular method or class.  If your changes cause one of these base line tests to fail you know you need to rework your change so the whole system functions properly.  This practice will reassure you that your changes will not have unintended effects on the system plus you will take pride in the fact you left the code base off better than it did when you started.
 
-Our Example Our example will deal with a simple video store processor.   We have three simple poco models, Movie, Customer, and Customer Profile.
+Our ExampleOur example will deal with a simple video store processor.   We have three simple poco models, Movie, Customer, and Customer Profile.
 
 ```csharp
 public class Movie {
