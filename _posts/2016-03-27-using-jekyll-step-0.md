@@ -24,6 +24,6 @@ Ok back to the steps from the Jekyll website.
 - ``cd m1bytes`` _navigate to the new directory_
 - ``jekyll serve`` _serves the app on port 4000_
 
-![jekyll](/assets/blog-images/2016-03-27-using-jekyll-step-0/01-image_large.png)
+![jekyll]({{ '/assets/blog-images/2016-03-27-using-jekyll-step-0/01-image_large.png' | relative_url }})
 
 We have Jekyll installed, created a simple site, and have it serving successfully.  This was a simple process however my struggle was not with Jekyll itself but with my environment.  Next up I need to learn how to apply a template.

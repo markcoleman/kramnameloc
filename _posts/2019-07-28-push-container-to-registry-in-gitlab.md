@@ -34,4 +34,4 @@ _tagged via a version and also latest_
 
 ## Container Registry
 
-![Silvrback blog image ](/assets/blog-images/2019-07-28-push-container-to-registry-in-gitlab/01-screen-shot-2019-07-28-at-11.55.18-am.png)
+![Silvrback blog image ]({{ '/assets/blog-images/2019-07-28-push-container-to-registry-in-gitlab/01-screen-shot-2019-07-28-at-11.55.18-am.png' | relative_url }})

@@ -111,7 +111,7 @@ The final step is making sure the cassette target runs before the octopack targe
 
 ##The result
 After everything is bundled together we end up with a nuget package with everything that is required to deploy our application including the cassette cache bundle.
-![Silvrback blog image](/assets/blog-images/2014-05-13-octopack-with-cassette/01-screen-shot-2014-05-13-at-7.13.06-pm_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2014-05-13-octopack-with-cassette/01-screen-shot-2014-05-13-at-7.13.06-pm_large.png' | relative_url }})
 
 #Conclusion
 I will have to say I am loving what Octopus is doing for us in making our deployments easier.  It also is to incorporate to existing build targets to get exactly what you need packaged into your nuget package.

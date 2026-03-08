@@ -9,18 +9,18 @@ Today I learned something new about [New Relic](http://www.newrelic.com) today t
 
  - First click on *show labels*
 
-![Show Labels](/assets/blog-images/2015-03-30-news-to-me-new-relic-categories-and-labels/01-show_large.png)
+![Show Labels]({{ '/assets/blog-images/2015-03-30-news-to-me-new-relic-categories-and-labels/01-show_large.png' | relative_url }})
 
  - Under your application you will see a ⊕ icon that will allow you to add an existing Category/Label or create a new one in the format of **Category:Label**
 
-![Add Category:Label](/assets/blog-images/2015-03-30-news-to-me-new-relic-categories-and-labels/02-add-_large.png)
+![Add Category:Label]({{ '/assets/blog-images/2015-03-30-news-to-me-new-relic-categories-and-labels/02-add-_large.png' | relative_url }})
 
  - After you set a few labels you can now use them in the search box above all of your applications.
 
-![New Search Options](/assets/blog-images/2015-03-30-news-to-me-new-relic-categories-and-labels/03-search_large.png)
+![New Search Options]({{ '/assets/blog-images/2015-03-30-news-to-me-new-relic-categories-and-labels/03-search_large.png' | relative_url }})
 
  - If you click on one of the items in the search drop down you now can roll up to an environment or all applications tagged with a particular label.  
 
-![Roll Up](/assets/blog-images/2015-03-30-news-to-me-new-relic-categories-and-labels/04-roll-up_large.png)
+![Roll Up]({{ '/assets/blog-images/2015-03-30-news-to-me-new-relic-categories-and-labels/04-roll-up_large.png' | relative_url }})
 
 Now we have nice organized applications in the APM.

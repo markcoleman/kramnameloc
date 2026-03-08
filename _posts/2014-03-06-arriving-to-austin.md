@@ -19,14 +19,14 @@ My only option at this point was to call customer service since the reservation 
 #On the Plane
 It was interesting to see the Susquehanna river during the winter time partially frozen.
 
-![Silvrback blog image](/assets/blog-images/2014-03-06-arriving-to-austin/01-img_1890_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2014-03-06-arriving-to-austin/01-img_1890_large.jpg' | relative_url }})
 
 #Arriving In Chicago
 On the arrival to Chicago I was able to witness the frozen lake of Michigan from the aircraft.  According to various news outlets it is around [90% frozen](http://chicago.cbslocal.com/2014/03/03/lake-michigan-90-percent-covered-in-ice-equals-highest-level-ever/)
 
-![Silvrback blog image](/assets/blog-images/2014-03-06-arriving-to-austin/02-img_1892_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2014-03-06-arriving-to-austin/02-img_1892_large.jpg' | relative_url }})
 
-![Silvrback blog image](/assets/blog-images/2014-03-06-arriving-to-austin/03-img_1893_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2014-03-06-arriving-to-austin/03-img_1893_large.jpg' | relative_url }})
 
 #In Chicago Airport
 Nothing really exciting to report at the airport.  I arrived, found some lunch, made sure I had a seat (and I did), and waiting for my flight
@@ -42,7 +42,7 @@ After some more waiting, I am back on the plane!  Finally, time to get to austin
 
 #The Flight
 During the flight we had a light snack of roasted vegetables and some fruit.
-![Silvrback blog image](/assets/blog-images/2014-03-06-arriving-to-austin/04-img_1894_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2014-03-06-arriving-to-austin/04-img_1894_large.jpg' | relative_url }})
 
 Also during this time I realized it would be a good time to work on my up and coming blog post regarding AngularJs, "AngularJs with User Js"
 
@@ -92,13 +92,13 @@ Now that I am at the hotel, my next task is to make the trek to the convention c
 
 #Badge Obtained
 The registration process was just like last year.  I went into Expo Room 1, gave my badge quick pick up code and Id and walked out the door with my badge.
-![Silvrback blog image](/assets/blog-images/2014-03-06-arriving-to-austin/05-img_1897_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2014-03-06-arriving-to-austin/05-img_1897_large.jpg' | relative_url }})
 
 #Time To Find Food
 Now that I got my badge and my bags of stuff, I need food.  Last year I went to [Banger's](http://bangersaustin.com) and decided to make a return visit.  I got a few select local brews and an awesome fried chicken meal (battered and fried chicken sausage, mash, biscuit, and gravy).  The food and beer was amazing!  I highly recommend this place if you find yourself in Austin.
 
 #Back To The Hotel
 I know from last year, I need to take it easy at least a few nights.  Being in SXSW leaves you with a lot of good memories and a lack of sleep.  So tonight I end the night a bit early.
-![Silvrback blog image](/assets/blog-images/2014-03-06-arriving-to-austin/06-img_1896_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2014-03-06-arriving-to-austin/06-img_1896_large.jpg' | relative_url }})
 
 #Until Tomorrow

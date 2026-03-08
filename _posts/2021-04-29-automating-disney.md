@@ -10,7 +10,7 @@ subtitle: "Setting up a pipedream.com workflow"
 My family had the dream of going to Disney for my sister in law birthday in April and after coordinating the house, plane tickets, multiple families, and tickets we had a problem.  The park tickets were not purchased at the exact same moment and some of the family was not able to [reserve their park](https://disneyworld.disney.go.com/experience-updates/park-reservations/)! How could we fix this so the family can go to the park together? 
 
 ## The Calendar
-![Silvrback blog image ](/assets/blog-images/2021-04-29-automating-disney/01-calendar.png)
+![Silvrback blog image ]({{ '/assets/blog-images/2021-04-29-automating-disney/01-calendar.png' | relative_url }})
 We could do the following...
 
 - Manually Click Dates
@@ -20,7 +20,7 @@ We could do the following...
 This clearly is not something we can do...there must be a way to dig deeper and automate the checking.
 
 ## Finding The Data
-![Silvrback blog image ](/assets/blog-images/2021-04-29-automating-disney/02-preview.png)
+![Silvrback blog image ]({{ '/assets/blog-images/2021-04-29-automating-disney/02-preview.png' | relative_url }})
 
 Lets look to see how the calendar actually works.
 
@@ -150,7 +150,7 @@ As you can see from the above we parsed the response and then captured the parks
 ## Automation
 Now that we had a node program we needed to run this on a schedule to automagically check ever so often to see if any new parks open up. We could run via cron or similar scheduling tools, manually run it, or a server-less approach.
 
-![Silvrback blog image ](/assets/blog-images/2021-04-29-automating-disney/03-pipedream.png)
+![Silvrback blog image ]({{ '/assets/blog-images/2021-04-29-automating-disney/03-pipedream.png' | relative_url }})
 
 I decided to go with [pipedream](https://pipedream.com) as it ticked all the boxes.
 
@@ -283,7 +283,7 @@ _we modified the built in template slightly to only send the email if `steps.che
 Now that we have all of these in place it is time to try it out by finding a date that has availability and use that in the `date` step.
 
 ### Testing It Out
-![Silvrback blog image ](/assets/blog-images/2021-04-29-automating-disney/04-email.png)
+![Silvrback blog image ]({{ '/assets/blog-images/2021-04-29-automating-disney/04-email.png' | relative_url }})
 
 We set the workflow to trigger every 10 minutes and as soon as we hit the right condition we got the above email.
 
