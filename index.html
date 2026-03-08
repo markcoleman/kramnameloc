@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="hero-label">Archive + Notes</p>
+  <h1>A clean, fast blog with your full history preserved.</h1>
+  <p>
+    Every imported post keeps its original publish timestamp. New posts are one command away.
+  </p>
+</section>
+
+<section class="post-grid" aria-label="Latest posts">
+  {% for post in site.posts %}
+    <article class="post-card">
+      <p class="card-date">{{ post.date | date: "%b %-d, %Y · %-I:%M %p %z" }}</p>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      {% if post.subtitle %}
+        <p class="card-subtitle">{{ post.subtitle }}</p>
+      {% endif %}
+      {% if post.description %}
+        <p class="card-description">{{ post.description }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
+</section>

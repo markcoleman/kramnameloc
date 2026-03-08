@@ -1,0 +1,12 @@
+{
+  "name": "Debian",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/ruby:1": {
+      "version": "3.3"
+    }
+  },
+  "forwardPorts": [4000],
+  "postCreateCommand": "bundle install"
+}

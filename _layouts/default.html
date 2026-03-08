@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+    {% seo %}
+    {%- feed_meta -%}
+  </head>
+  <body>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <p class="tagline">{{ site.description }}</p>
+    </header>
+
+    <main class="page-shell">{{ content }}</main>
+
+    <footer class="site-footer">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll + GitHub Pages.</p>
+    </footer>
+  </body>
+</html>
