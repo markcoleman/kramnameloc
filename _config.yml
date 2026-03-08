@@ -48,6 +48,11 @@ defaults:
       image: /assets/images/social-card.svg
 
 exclude:
+  - vendor
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
   - blog.xml
   - scripts/
   - README.md
