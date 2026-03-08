@@ -7,7 +7,7 @@ subtitle: "C_LOG_19"
 ---
 Today I took my sketch and inked it for coloring in the coming day.
 
-![Silvrback blog image](/assets/blog-images/2015-12-18-inking-kang/01-image_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-18-inking-kang/01-image_large.png' | relative_url }})
 
 *mental recap*
 

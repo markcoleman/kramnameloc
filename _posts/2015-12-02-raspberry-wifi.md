@@ -99,7 +99,7 @@ nmap -p 22 --open -sV 192.168.1.*
 Nmap scan report for raspberrypi (xxx.xxx.xxx.xxx)
 ```
 
-![Silvrback blog image](/assets/blog-images/2015-12-02-raspberry-wifi/01-img_0647_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-02-raspberry-wifi/01-img_0647_large.jpg' | relative_url }})
 *mmmmm flashing blue lights*
 
 

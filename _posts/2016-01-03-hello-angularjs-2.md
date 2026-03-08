@@ -125,7 +125,7 @@ bootstrap(AppComponent);
 After doing ``npm start``
 
 #Success
-![Silvrback blog image](/assets/blog-images/2016-01-03-hello-angularjs-2/01-screen-shot-2016-01-03-at-8.12.54-pm_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2016-01-03-hello-angularjs-2/01-screen-shot-2016-01-03-at-8.12.54-pm_large.png' | relative_url }})
 
 *mental recap*
 

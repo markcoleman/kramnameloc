@@ -29,7 +29,7 @@ nmap -p 22 --open -sV 192.168.1.*
 
 No hosts found, guess I should see what is on the screen (during a commercial of course).
 
-![Silvrback blog image](/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/01-img_0643_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/01-img_0643_large.jpg' | relative_url }})
 
 We appear to have [noobs](https://www.raspberrypi.org/downloads/noobs/) not raspbian.
 
@@ -40,7 +40,7 @@ I wanted to run rapbian so off to the google to find the download of the [OS Ima
 Again back to the google and find an [install guide](http://trendblog.net/install-raspbian-sd-card-os-x-windows/)
 
 Since I am running el captain my disk utility looked a bit different but after running "First Aid" I was able to see similar details in the guide.
-![Silvrback blog image](/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/02-screen-shot-2015-12-01-at-9.11.45-pm_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/02-screen-shot-2015-12-01-at-9.11.45-pm_large.png' | relative_url }})
 
 Filling in the command line with the downloaded img and disk details
 
@@ -52,15 +52,15 @@ sudo dd bs=1m if=2015-11-21-raspbian-jessie.img of=/dev/disk2
 
 This process can take a **long** time if you want to see some progress type ``ctrl-t``
 
-![Silvrback blog image](/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/03-screen-shot-2015-12-01-at-10.09.46-pm_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/03-screen-shot-2015-12-01-at-10.09.46-pm_large.png' | relative_url }})
 
 Queue sponge bob one hour later, it finished and we have the partitions setup
-![Silvrback blog image](/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/04-screen-shot-2015-12-01-at-10.25.28-pm_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/04-screen-shot-2015-12-01-at-10.25.28-pm_large.png' | relative_url }})
 
 Time to eject and I hope this all works.
 
 #Success
-![Silvrback blog image](/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/05-img_0645_large.jpg)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-01-doing-something-with-a-raspberry-pi/05-img_0645_large.jpg' | relative_url }})
 
 We have something running on the raspberry pi!
 

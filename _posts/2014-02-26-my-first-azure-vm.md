@@ -17,31 +17,31 @@ First off you need to log into the azure portal.
 I navigated to the virtual machines icon on the left and click on the create virtual machines link as I had no virtual machines setup prior.
 
 ###Create New VM
-![Silvrback blog image](/assets/blog-images/2014-02-26-my-first-azure-vm/01-new-vm-portal_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2014-02-26-my-first-azure-vm/01-new-vm-portal_large.png' | relative_url }})
 A create new VM form showed up from the bottom.  Since I wanted to create something from the gallery I decided to click the link "From Gallery"
 
 ###Selecting Microsoft Windows Server
-![Silvrback blog image](/assets/blog-images/2014-02-26-my-first-azure-vm/02-select-windows_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2014-02-26-my-first-azure-vm/02-select-windows_large.png' | relative_url }})
 Now since I wanted to create a Windows Server I selected the Windows Server Essentials image.
 
 ###Server Name and User
-![Silvrback blog image](/assets/blog-images/2014-02-26-my-first-azure-vm/03-server-details_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2014-02-26-my-first-azure-vm/03-server-details_large.png' | relative_url }})
 The next screen I saw was some initial configuration for the Vm including server name and the first user in the system.
 
 ###Cloud Service, region, storage, etc
-![Silvrback blog image](/assets/blog-images/2014-02-26-my-first-azure-vm/04-vm-configuration_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2014-02-26-my-first-azure-vm/04-vm-configuration_large.png' | relative_url }})
 This next screen talks about cloud service, region, storage, and a few other options.  I decided to leave these at the default as I need to do a bit more research on what each one means.
 
 ###Setup Ports
-![Silvrback blog image](/assets/blog-images/2014-02-26-my-first-azure-vm/05-setup-ports_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2014-02-26-my-first-azure-vm/05-setup-ports_large.png' | relative_url }})
 Next you can configure which endpoints are exposed on this server.  This allows you to RDP in, power shell, open up HTTP, etc.  Once again I left the default configuration and clicked the ✓.
 
 ###Creating VM
-![Silvrback blog image](/assets/blog-images/2014-02-26-my-first-azure-vm/06-creating-your-vm_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2014-02-26-my-first-azure-vm/06-creating-your-vm_large.png' | relative_url }})
 After a few seconds the VM started the provisioning process.  Since I didn't have a cloud service setup it created that first and then the actual virtual machine.  After a few minutes everything was created and we were running.
 
 ###It is running!
-![Silvrback blog image](/assets/blog-images/2014-02-26-my-first-azure-vm/07-it-is-running_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2014-02-26-my-first-azure-vm/07-it-is-running_large.png' | relative_url }})
 After the Vm was created I clicked on the VM and then the connect icon on the bottom task bar.  This downloaded an rdp file that allows you to remotely connect to your azure vm.
 *I was unable to RDP into the azure vm from my mac as I found from this [answer](http://stackoverflow.com/questions/13248955/cant-rdp-to-azure-on-mac-os-x).  Once I connected from Windows 8.1 I had no problems.*
 

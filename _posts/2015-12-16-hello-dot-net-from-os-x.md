@@ -139,11 +139,11 @@ public class Program
 
 As soon as I created the ``project.json`` file code prompted me to restore missing packages.
 
-![Silvrback blog image](/assets/blog-images/2015-12-16-hello-dot-net-from-os-x/01-screen-shot-2015-12-16-at-8.32.16-pm_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-16-hello-dot-net-from-os-x/01-screen-shot-2015-12-16-at-8.32.16-pm_large.png' | relative_url }})
 *I like buttons, sometimes....*
 
 Upon clicking the button it ran ``dnu restore``
-![Silvrback blog image](/assets/blog-images/2015-12-16-hello-dot-net-from-os-x/02-screen-shot-2015-12-16-at-8.32.26-pm_large.png)
+![Silvrback blog image]({{ '/assets/blog-images/2015-12-16-hello-dot-net-from-os-x/02-screen-shot-2015-12-16-at-8.32.26-pm_large.png' | relative_url }})
 
 Over in the console I then ran ``dnx run``
 
