@@ -9,24 +9,24 @@ Recently I have been exploring and learning as much as I can regarding azure.  S
 *Steps I took, your mileage may vary*
 
 ###Log into the portal
-![Silvrback blog image](/assets/blog-images/acd11995c6f0-01-mobile-services_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-02-my-first-azure-mobile-service-for-ios/01-01-mobile-services_large.png)
 Logically the first thing you need to do is log into the azure portal and click on "Mobile Services" and then "Create A New Mobile Service"
 
 ###Pick Url
 From there you are presented a wizard that guides you through the process of creating your first mobile service.
-![Silvrback blog image](/assets/blog-images/218e8b3b2958-02-create_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-02-my-first-azure-mobile-service-for-ios/02-02-create_large.png)
 
 ###Setup Sql Server Info
 Since I picked to create a new sql server I had to fill out the settings for the sql db.
-![Silvrback blog image](/assets/blog-images/85a6a6ee5664-03-create-db_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-02-my-first-azure-mobile-service-for-ios/03-03-create-db_large.png)
 
 ###Creating mobile service and Sql
 After you complete those two steps your first mobile service will be configured and created.
-![Silvrback blog image](/assets/blog-images/b1dfac9aa6c5-04-creating_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-02-my-first-azure-mobile-service-for-ios/04-04-creating_large.png)
 
 ###Getting Started
 After a few minutes your mobile service is created and you are presented with a getting started page which includes sample code for various mobile platforms.
-![Silvrback blog image](/assets/blog-images/65a7c411c19a-05-getting-started_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-02-my-first-azure-mobile-service-for-ios/05-05-getting-started_large.png)
 
 #iOS
 In this example I am going to use iOS as the platform to consume my first mobile service.  The demo project I am going to create is the Master Detail project type when creating a new Xcode project.
@@ -35,7 +35,7 @@ In this example I am going to use iOS as the platform to consume my first mobile
 
 ###Adding the client
 After I created the Master Detail project I have to add in the SDK for iOS that allows me to communicate to my mobile service.  From the getting started guide you [download the SDK](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409).  After you have it downloaded the guide simply mentions dragging and dropping the two framework files into your project.  Make sure to check the box to copy to the project.
-![Silvrback blog image](/assets/blog-images/23b40ad9e90c-06-drag-and-drop_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-02-my-first-azure-mobile-service-for-ios/06-06-drag-and-drop_large.png)
 
 
 ##Or use CocoaPods
@@ -202,11 +202,11 @@ The last action you can perform in the master detail application is removing an 
 ###Run the app
 Now that we have all the pieces in place we can run our application which will allow us to add, delete, and retrieve items from our azure mobile service.
 
-![Silvrback blog image](/assets/blog-images/0dfdf0303447-07-running-app_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-02-my-first-azure-mobile-service-for-ios/07-07-running-app_large.png)
 
 ###Back to the portal
 After you add in a few items and you go back to he portal you can see the data that is now in our table.
-![Silvrback blog image](/assets/blog-images/37c3dd86a9bd-08-view-data_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-02-my-first-azure-mobile-service-for-ios/08-08-view-data_large.png)
 
 #Conclusion
 Once again azure impresses me with the ease to get started with it's services.  

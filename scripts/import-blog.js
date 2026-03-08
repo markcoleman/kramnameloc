@@ -3,7 +3,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const https = require('node:https');
-const { createHash } = require('node:crypto');
 const { pipeline } = require('node:stream/promises');
 
 const inputPath = process.argv[2] || 'blog.xml';
@@ -98,13 +97,12 @@ function safeFileName(value) {
     .toLowerCase();
 }
 
-function getLocalImageName(url) {
+function getOriginalImageParts(url) {
   const parsed = new URL(url);
   const original = decodeURIComponent(path.posix.basename(parsed.pathname));
   const ext = path.extname(original) || '.bin';
   const base = path.basename(original, ext) || 'image';
-  const shortHash = createHash('sha1').update(url).digest('hex').slice(0, 12);
-  return `${shortHash}-${safeFileName(base)}${ext.toLowerCase()}`;
+  return { base: safeFileName(base) || 'image', ext: ext.toLowerCase() };
 }
 
 function downloadToFile(url, destinationPath, redirects = 0) {
@@ -140,34 +138,53 @@ function downloadToFile(url, destinationPath, redirects = 0) {
   });
 }
 
-async function toLocalImagePath(url, downloadCache) {
-  if (downloadCache.has(url)) {
-    return downloadCache.get(url);
+async function toLocalImagePath(url, localRelativePath, downloadCache) {
+  const cacheKey = `${localRelativePath}|${url}`;
+  if (downloadCache.has(cacheKey)) {
+    return downloadCache.get(cacheKey);
   }
 
-  const fileName = getLocalImageName(url);
-  const localPath = path.join(imageOutputDir, fileName);
-  const webPath = `${imageWebRoot}/${fileName}`;
+  const localPath = path.join(imageOutputDir, localRelativePath);
+  const webPath = `${imageWebRoot}/${localRelativePath.replace(/\\/g, '/')}`;
 
   if (!fs.existsSync(localPath)) {
     await downloadToFile(url, localPath);
   }
 
-  downloadCache.set(url, webPath);
+  downloadCache.set(cacheKey, webPath);
   return webPath;
 }
 
-async function localizeBodyImages(body, downloadCache) {
-  const urls = new Set(
-    [...body.matchAll(/https:\/\/silvrback\.s3\.amazonaws\.com\/uploads\/[^)\s"'<>]+/g)].map(
-      (match) => match[0]
+function buildPostImageRelativePath(postKey, index, url, usedFileNames) {
+  const { base, ext } = getOriginalImageParts(url);
+  const prefix = String(index).padStart(2, '0');
+  let candidate = `${prefix}-${base}${ext}`;
+  let n = 2;
+  while (usedFileNames.has(candidate)) {
+    candidate = `${prefix}-${base}-${n}${ext}`;
+    n += 1;
+  }
+  usedFileNames.add(candidate);
+  return path.join(postKey, candidate);
+}
+
+async function localizeBodyImages(body, postKey, downloadCache) {
+  const urls = [
+    ...new Set(
+      [...body.matchAll(/https:\/\/silvrback\.s3\.amazonaws\.com\/uploads\/[^)\s"'<>]+/g)].map(
+        (match) => match[0]
+      )
     )
-  );
+  ];
 
   let localizedBody = body;
+  const usedFileNames = new Set();
+  let index = 1;
   for (const url of urls) {
-    const localPath = await toLocalImagePath(url, downloadCache);
+    const relativePath = buildPostImageRelativePath(postKey, index, url, usedFileNames);
+    const localPath = await toLocalImagePath(url, relativePath, downloadCache);
     localizedBody = localizedBody.split(url).join(localPath);
+    index += 1;
   }
 
   return localizedBody;
@@ -212,9 +229,10 @@ async function run() {
     usedNames.set(key, seenCount);
     const suffix = seenCount > 1 ? `-${seenCount}` : '';
     const fileName = `${datePart}-${baseSlug}${suffix}.md`;
+    const postKey = `${datePart}-${baseSlug}${suffix}`;
 
     const fullPath = path.join(outputDir, fileName);
-    const localizedBody = await localizeBodyImages(post.body, downloadCache);
+    const localizedBody = await localizeBodyImages(post.body, postKey, downloadCache);
     const markdown = `${toFrontMatter(post)}${localizedBody.trim()}\n`;
     fs.writeFileSync(fullPath, markdown, 'utf8');
   }

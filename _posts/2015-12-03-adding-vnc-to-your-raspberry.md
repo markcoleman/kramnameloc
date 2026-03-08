@@ -41,15 +41,15 @@ pi@raspberrypi:~ $
 
 Now that we have the server running we need to connect to it and nothing is easier than  [VNC Viewer](http://www.realvnc.com/download/viewer/).
 
-![Silvrback blog image](/assets/blog-images/c24bdc5dd8e9-screen-shot-2015-12-03-at-9.23.02-pm_large.png)
+![Silvrback blog image](/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/01-screen-shot-2015-12-03-at-9.23.02-pm_large.png)
 *don't forget the :1 after your hostname/ip address*
 
 Confirm through the prompt and enter your password.
-![Silvrback blog image](/assets/blog-images/584093fa6403-screen-shot-2015-12-03-at-9.23.11-pm_large.png)
+![Silvrback blog image](/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/02-screen-shot-2015-12-03-at-9.23.11-pm_large.png)
 
 ##Success
 We are connected to the vnc server over wifi
-![Silvrback blog image](/assets/blog-images/6f3d6092f1e8-screen-shot-2015-12-03-at-9.29.40-pm_large.png)
+![Silvrback blog image](/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/03-screen-shot-2015-12-03-at-9.29.40-pm_large.png)
 
 **What about reboot**
 
@@ -127,7 +127,7 @@ Now that all tasks are complete we can try out executing ``sudo reboot``.
 
 #YES!
 The vnc server started up and I was able to remotely connect.
-![Silvrback blog image](/assets/blog-images/4ad81475fab4-img_0649_large.jpg)
+![Silvrback blog image](/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/04-img_0649_large.jpg)
 
 *Mental Recap*
 

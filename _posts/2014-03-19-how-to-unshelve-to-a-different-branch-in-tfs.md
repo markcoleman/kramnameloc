@@ -25,11 +25,11 @@ PS C:\Development> tfpt unshelve "ShevesetName;UserName" /migrate /source:"$/Pro
 Just fill in the ```"SheveSetName;UserName"``` and the ```/source``` and ```/target``` branch pieces.
 
 #Dialog
-![Silvrback blog image](/assets/blog-images/bb5da1c74a72-screen-shot-2014-03-19-at-9.05.39-am_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-19-how-to-unshelve-to-a-different-branch-in-tfs/01-screen-shot-2014-03-19-at-9.05.39-am_large.png)
 After you run the command you will be presented with a dialog prompting you if you wish to unshelve the changes.
 
 #Resolve Dialog
-![Silvrback blog image](/assets/blog-images/2301daa0da87-screen-shot-2014-03-19-at-9.08.06-am_large.png)
+![Silvrback blog image](/assets/blog-images/2014-03-19-how-to-unshelve-to-a-different-branch-in-tfs/02-screen-shot-2014-03-19-at-9.08.06-am_large.png)
 Once you start the unshelve process you will be shown a merge dialog asking you how to resolve any conflicts present between the sheveset and the target branch.  After you click "Auto-merge All" you will see the power shell prompt start scrolling as it adds/deletes/auto-merges the files from the sheveset and the target branch.  When this finishes you can close down this dialog and the unshelve to a new branch is complete.
 
 #Conclusion

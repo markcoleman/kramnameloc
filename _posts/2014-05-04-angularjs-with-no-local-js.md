@@ -11,7 +11,7 @@ A few weeks ago I was pondering what kind of an app you could build with Angular
 #What To Build
 Given my constraints of not writing any JavaScript I had to keep the idea fairly simple but also something that could be potentially a real world scenario.  I decided on building a Contact Us form that asked for your name, contact method, and optional comments.
 
-![Silvrback blog image](/assets/blog-images/f217f651a93b-01-contact-form_large.png)
+![Silvrback blog image](/assets/blog-images/2014-05-04-angularjs-with-no-local-js/01-01-contact-form_large.png)
 
 #Getting Started
 Since I didn't want to write any local JavaScript I still needed a way to serve the content to the browser.  The easiest way for me to handle this was to setup a node server using [express](http://expressjs.com).  With express installed (and me not knowing zero about express) I ended up with the following ```server.js``` file which hosted my local content and accepted a post to "save" my contact form.

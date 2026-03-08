@@ -9,6 +9,6 @@ Over here at [Members 1st FCU](https://myonline.members1st.org) we have been foc
 
 The easiest solution to optimize your sites image payload is run the files through [TinyPng](http://www.tinypng.com)
 
-![Tinypng](/assets/blog-images/0577c3f4dc35-tinypng_large.png)
+![Tinypng](/assets/blog-images/2015-04-01-tinypng-to-the-rescue/01-tinypng_large.png)
 
 We processed all of our images and ended up saving about 200k which is a great savings in bandwidth and users data costs.

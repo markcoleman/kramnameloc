@@ -31,11 +31,11 @@ Now that I have it uninstalled it is time to install RealVNC and this guide seem
 ``sudo vnclicense -add <license-key>``
 *got the key from [activation page](https://www.realvnc.com/purchase/activate/)*
 
-![Silvrback blog image](/assets/blog-images/6fa935e98174-screen-shot-2015-12-30-at-7.21.41-pm_large.png)
+![Silvrback blog image](/assets/blog-images/2015-12-30-pi-with-realvnc/01-screen-shot-2015-12-30-at-7.21.41-pm_large.png)
 *success!  I however had to renter my key, my guess that was because I entered from the command line?*
 
 So why did I end up doing this?  So I could run vscode as tightvnc did not support randr(at least I don't think it did).
-![Silvrback blog image](/assets/blog-images/8541993cfce4-screen-shot-2015-12-30-at-7.29.27-pm_large.png)
+![Silvrback blog image](/assets/blog-images/2015-12-30-pi-with-realvnc/02-screen-shot-2015-12-30-at-7.29.27-pm_large.png)
 
 *mental recap*
 

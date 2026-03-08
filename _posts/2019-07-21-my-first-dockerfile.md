@@ -37,6 +37,6 @@ docker run -d -p 8080:80 -i -t markcoleman/viking-mill:latest
 ```
 
 _Site running in an ngnix container_
-![Viking Mill ](/assets/blog-images/2d9745d32fae-screen-shot-2019-07-21-at-12.44.57-pm.png)
+![Viking Mill ](/assets/blog-images/2019-07-21-my-first-dockerfile/01-screen-shot-2019-07-21-at-12.44.57-pm.png)
 
 Simple but yet very effective and allowed me to learn a bit more, next up how to automate this using gitlab.
