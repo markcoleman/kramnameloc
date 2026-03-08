@@ -3,10 +3,32 @@ description: Notes on software, automation, and thoughtful engineering.
 url: ""
 baseurl: ""
 lang: en-US
+locale: en_US
 timezone: America/New_York
 markdown: kramdown
 highlighter: rouge
 permalink: /:title/
+keywords:
+  - software engineering
+  - automation
+  - dev notes
+  - programming
+
+author:
+  name: Kramnameloc
+  twitter: kramnameloc
+
+twitter:
+  username: kramnameloc
+  card: summary_large_image
+
+social:
+  name: Kramnameloc
+  links:
+    - https://github.com/
+
+logo: /assets/images/site-logo.svg
+image: /assets/images/social-card.svg
 
 plugins:
   - jekyll-feed
@@ -19,6 +41,11 @@ defaults:
       type: "posts"
     values:
       layout: post
+      image: /assets/images/social-card.svg
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/social-card.svg
 
 exclude:
   - blog.xml

@@ -1,25 +1,89 @@
 ---
 layout: default
 ---
-<section class="hero">
-  <p class="hero-label">Archive + Notes</p>
-  <h1>A clean, fast blog with your full history preserved.</h1>
-  <p>
-    Every imported post keeps its original publish timestamp. New posts are one command away.
-  </p>
+{% assign latest_post = site.posts.first %}
+
+{% if latest_post %}
+  <section class="home-latest" aria-label="Latest post">
+    <p class="section-label">Latest Post</p>
+    <article class="latest-article">
+      <header class="latest-header">
+        <p class="card-date">{{ latest_post.date | date: "%B %-d, %Y · %-I:%M %p %z" }}</p>
+        <h1>{{ latest_post.title }}</h1>
+        {% if latest_post.subtitle %}
+          <p class="latest-subtitle">{{ latest_post.subtitle }}</p>
+        {% endif %}
+        {% if latest_post.description %}
+          <p class="latest-description">{{ latest_post.description }}</p>
+        {% endif %}
+        {% if latest_post.tags and latest_post.tags.size > 0 %}
+          <ul class="tag-list" aria-label="Tags">
+            {% for tag in latest_post.tags %}
+              <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <p class="latest-link">
+          <a href="{{ latest_post.url | relative_url }}">Open dedicated permalink</a>
+        </p>
+      </header>
+      <section class="post-content latest-content">{{ latest_post.content }}</section>
+    </article>
+  </section>
+{% endif %}
+
+<section id="archive" class="archive-home" aria-label="Earlier posts">
+  <div class="section-head">
+    <p class="section-label">Earlier Posts</p>
+    <a class="section-link" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  </div>
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% assign first_opened = false %}
+  <nav class="archive-jump" aria-label="Jump to year">
+    {% for year in posts_by_year %}
+      {% assign year_posts = year.items | where_exp: "item", "item.url != latest_post.url" %}
+      {% if year_posts.size > 0 %}
+        <a href="#year-{{ year.name }}">{{ year.name }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+  <div class="archive-groups">
+    {% for year in posts_by_year %}
+      {% assign year_posts = year.items | where_exp: "item", "item.url != latest_post.url" %}
+      {% if year_posts.size > 0 %}
+        {% if first_opened == false %}
+          <details id="year-{{ year.name }}" class="archive-year" open>
+          {% assign first_opened = true %}
+        {% else %}
+          <details id="year-{{ year.name }}" class="archive-year">
+        {% endif %}
+          <summary>
+            <span class="archive-year-label">{{ year.name }}</span>
+            <span class="archive-year-count">{{ year_posts.size }} post{% if year_posts.size != 1 %}s{% endif %}</span>
+          </summary>
+          <ul class="archive-list">
+            {% for post in year_posts %}
+              <li class="archive-item">
+                <p class="archive-date">{{ post.date | date: "%b %-d" }}</p>
+                <div class="archive-copy">
+                  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                  {% if post.subtitle %}
+                    <p>{{ post.subtitle }}</p>
+                  {% elsif post.description %}
+                    <p>{{ post.description | truncate: 120 }}</p>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </details>
+      {% endif %}
+    {% endfor %}
+  </div>
 </section>
 
-<section class="post-grid" aria-label="Latest posts">
-  {% for post in site.posts %}
-    <article class="post-card">
-      <p class="card-date">{{ post.date | date: "%b %-d, %Y · %-I:%M %p %z" }}</p>
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      {% if post.subtitle %}
-        <p class="card-subtitle">{{ post.subtitle }}</p>
-      {% endif %}
-      {% if post.description %}
-        <p class="card-description">{{ post.description }}</p>
-      {% endif %}
-    </article>
-  {% endfor %}
-</section>
+{% if site.posts.size <= 1 %}
+  <section class="empty-note">
+    <p>Create your next post with <code>./scripts/new-post.sh "Title"</code>.</p>
+  </section>
+{% endif %}

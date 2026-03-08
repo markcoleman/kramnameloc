@@ -3,10 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          if (stored === "light" || stored === "dark") {
+            document.documentElement.setAttribute("data-theme", stored);
+          }
+        } catch (e) {
+          return;
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
@@ -14,12 +27,17 @@
     {%- feed_meta -%}
   </head>
   <body>
-    <div class="orb orb-a" aria-hidden="true"></div>
-    <div class="orb orb-b" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <p class="tagline">{{ site.description }}</p>
+      <div class="brand-group">
+        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <p class="tagline">{{ site.description }}</p>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+        <span aria-hidden="true">◐</span>
+      </button>
     </header>
 
     <main class="page-shell">{{ content }}</main>
@@ -27,5 +45,35 @@
     <footer class="site-footer">
       <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll + GitHub Pages.</p>
     </footer>
+    <script>
+      (function () {
+        var button = document.getElementById("theme-toggle");
+        if (!button) return;
+        var storageEnabled = true;
+        try {
+          localStorage.getItem("theme");
+        } catch (e) {
+          storageEnabled = false;
+        }
+        function currentTheme() {
+          return document.documentElement.getAttribute("data-theme");
+        }
+        function apply(next) {
+          if (next === "light" || next === "dark") {
+            document.documentElement.setAttribute("data-theme", next);
+            if (storageEnabled) localStorage.setItem("theme", next);
+            button.setAttribute("aria-pressed", String(next === "dark"));
+            return;
+          }
+          document.documentElement.removeAttribute("data-theme");
+          if (storageEnabled) localStorage.removeItem("theme");
+          button.setAttribute("aria-pressed", "false");
+        }
+        button.addEventListener("click", function () {
+          apply(currentTheme() === "dark" ? "light" : "dark");
+        });
+        button.setAttribute("aria-pressed", String(currentTheme() === "dark"));
+      })();
+    </script>
   </body>
 </html>
