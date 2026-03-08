@@ -11,7 +11,7 @@ One feature of TFS is it allows you to perform a [gated checkin](https://msdn.mi
 
 
 #Create a shelve of your changes
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/d6b60418-e883-45c6-b6e8-66997e3505f2/01%20-%20shelve_large.png)
+![Silvrback blog image](/assets/blog-images/bce9d9388112-01-shelve_large.png)
 
 #Queue Build
  - Go to the build tab in team explorer and right click on “Development” then click on “Queue New Build…”
@@ -20,11 +20,11 @@ One feature of TFS is it allows you to perform a [gated checkin](https://msdn.mi
  - Tick the “Check in changes after successful build”
  - Click “Queue"
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/a1b29f38-d910-4755-be12-4b23f8ed0ab0/02%20-%20queue_large.png)
+![Silvrback blog image](/assets/blog-images/d3db5827d4c4-02-queue_large.png)
 
 This will cause a build to start on the build server with the latest sources in source control and your shelve set changes.  If all goes well the shelveset will be checked in at the end of the build.
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/83fa7bc3-83cf-49b3-bd52-b2ed3a5f6b4a/03%20-%20history_large.png)
+![Silvrback blog image](/assets/blog-images/1fb123ced0e1-03-history_large.png)
 
 
 *note: Your changes will remain checked out locally, but if you get latest your checked out changes will match what is in source control and will now be synchronized*

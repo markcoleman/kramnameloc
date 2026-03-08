@@ -41,7 +41,7 @@ We our dependencies installed we need to open our project.  When using CocoaPods
 ```
 open RayGunExample.xcworkspace
 ```
-![Xcode](https://silvrback.s3.amazonaws.com/uploads/7c39ab94-b309-46e3-818d-945e8fef73f8/Screen%20Shot%202014-02-25%20at%209.45.03%20PM_large.png)
+![Xcode](/assets/blog-images/367223420c06-screen-shot-2014-02-25-at-9.45.03-pm_large.png)
 
 Inside our workspace navigate to the ```AppDelegate.m``` file inside of your project and add the following statement.
 ```
@@ -76,7 +76,7 @@ As not being an Objective-C developer I had to google how to throw an exception.
 **This part I am not sure about, but I did the following steps**
 We need to produce an archive so we can extract the dSym file.  This is done by doing the following actions.
 Select iOS
-![Select iOS](https://silvrback.s3.amazonaws.com/uploads/9dcc8977-518a-4daa-a703-aca81bed1e3b/pick%20iOS_large.png)
+![Select iOS](/assets/blog-images/1a96c522d28c-pick-ios_large.png)
 From the menu select Product->Archive
 
 Now the organizer will open up and you can right click on your archive and pick "Show in finder"
@@ -92,7 +92,7 @@ Build your application and deploy to the simulator or your physical device.  Tap
 
 #Back To Raygun
 Now if you log into raygun you should see your exception in the application dashboard.
-![Error Details](https://silvrback.s3.amazonaws.com/uploads/c20c1fa2-3685-4a76-997a-9a6c992abb28/raygun%20view_large.png)
+![Error Details](/assets/blog-images/258f139f04c1-raygun-view_large.png)
 We now have exception logging for our iOS application and now we can hopefully figure out the cause of our mysterious error.
 
 #Conclusion

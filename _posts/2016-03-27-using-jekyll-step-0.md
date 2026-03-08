@@ -24,6 +24,6 @@ Ok back to the steps from the Jekyll website.
 - ``cd m1bytes`` _navigate to the new directory_
 - ``jekyll serve`` _serves the app on port 4000_
 
-![jekyll](https://silvrback.s3.amazonaws.com/uploads/f793ab6a-32d9-4432-9a86-1a94f5c7ae1f/image_large.png)
+![jekyll](/assets/blog-images/8df76f69fd2f-image_large.png)
 
 We have Jekyll installed, created a simple site, and have it serving successfully.  This was a simple process however my struggle was not with Jekyll itself but with my environment.  Next up I need to learn how to apply a template.

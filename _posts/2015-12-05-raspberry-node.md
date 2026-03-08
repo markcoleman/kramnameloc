@@ -56,15 +56,15 @@ Time to ed the file
 nano server.js
 ```
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/6eb9172a-64e5-4e27-9e08-c1368936fa90/1%20-%20nano_large.png)
+![Silvrback blog image](/assets/blog-images/55c7d30cad70-1-nano_large.png)
 
 Now if we run ``node server.js`` we can create a simple http server that responds with 'Hello World'
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/b65acab7-b6be-4d37-92bd-1e9234139e23/2%20-%20serve_large.png)
+![Silvrback blog image](/assets/blog-images/640efbf719b1-2-serve_large.png)
 
 #Success
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/795e3877-ee2c-4ccb-b42e-35a0f38d22d9/3%20-%20result_large.png)
+![Silvrback blog image](/assets/blog-images/aff0f40e9767-3-result_large.png)
 
 *Mental recap*
 

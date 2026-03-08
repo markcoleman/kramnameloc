@@ -2,9 +2,14 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const https = require('node:https');
+const { createHash } = require('node:crypto');
+const { pipeline } = require('node:stream/promises');
 
 const inputPath = process.argv[2] || 'blog.xml';
 const outputDir = process.argv[3] || '_posts';
+const imageOutputDir = process.argv[4] || path.join('assets', 'blog-images');
+const imageWebRoot = `/${imageOutputDir.replace(/\\/g, '/').replace(/^\/+/, '')}`;
 
 function decodeEntities(value) {
   const named = {
@@ -81,6 +86,93 @@ function parsePosts(raw) {
   return posts;
 }
 
+function ensureDirForFile(filePath) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+}
+
+function safeFileName(value) {
+  return value
+    .replace(/[^a-zA-Z0-9._-]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .toLowerCase();
+}
+
+function getLocalImageName(url) {
+  const parsed = new URL(url);
+  const original = decodeURIComponent(path.posix.basename(parsed.pathname));
+  const ext = path.extname(original) || '.bin';
+  const base = path.basename(original, ext) || 'image';
+  const shortHash = createHash('sha1').update(url).digest('hex').slice(0, 12);
+  return `${shortHash}-${safeFileName(base)}${ext.toLowerCase()}`;
+}
+
+function downloadToFile(url, destinationPath, redirects = 0) {
+  return new Promise((resolve, reject) => {
+    if (redirects > 5) {
+      reject(new Error(`Too many redirects for ${url}`));
+      return;
+    }
+
+    https
+      .get(url, (response) => {
+        const status = response.statusCode || 0;
+        if (status >= 300 && status < 400 && response.headers.location) {
+          const redirected = new URL(response.headers.location, url).toString();
+          response.resume();
+          downloadToFile(redirected, destinationPath, redirects + 1)
+            .then(resolve)
+            .catch(reject);
+          return;
+        }
+
+        if (status < 200 || status >= 300) {
+          response.resume();
+          reject(new Error(`Failed downloading ${url} (HTTP ${status})`));
+          return;
+        }
+
+        ensureDirForFile(destinationPath);
+        const writeStream = fs.createWriteStream(destinationPath);
+        pipeline(response, writeStream).then(resolve).catch(reject);
+      })
+      .on('error', reject);
+  });
+}
+
+async function toLocalImagePath(url, downloadCache) {
+  if (downloadCache.has(url)) {
+    return downloadCache.get(url);
+  }
+
+  const fileName = getLocalImageName(url);
+  const localPath = path.join(imageOutputDir, fileName);
+  const webPath = `${imageWebRoot}/${fileName}`;
+
+  if (!fs.existsSync(localPath)) {
+    await downloadToFile(url, localPath);
+  }
+
+  downloadCache.set(url, webPath);
+  return webPath;
+}
+
+async function localizeBodyImages(body, downloadCache) {
+  const urls = new Set(
+    [...body.matchAll(/https:\/\/silvrback\.s3\.amazonaws\.com\/uploads\/[^)\s"'<>]+/g)].map(
+      (match) => match[0]
+    )
+  );
+
+  let localizedBody = body;
+  for (const url of urls) {
+    const localPath = await toLocalImagePath(url, downloadCache);
+    localizedBody = localizedBody.split(url).join(localPath);
+  }
+
+  return localizedBody;
+}
+
 function toFrontMatter(post) {
   const lines = [
     '---',
@@ -98,7 +190,7 @@ function toFrontMatter(post) {
   return lines.join('\n');
 }
 
-function run() {
+async function run() {
   const raw = fs.readFileSync(inputPath, 'utf8').replace(/^\uFEFF/, '');
   const posts = parsePosts(raw);
 
@@ -107,10 +199,12 @@ function run() {
   }
 
   fs.mkdirSync(outputDir, { recursive: true });
+  fs.mkdirSync(imageOutputDir, { recursive: true });
 
   const usedNames = new Map();
+  const downloadCache = new Map();
 
-  posts.forEach((post) => {
+  for (const post of posts) {
     const datePart = post.publishedAt.slice(0, 10);
     const baseSlug = slugify(post.title);
     const key = `${datePart}-${baseSlug}`;
@@ -120,11 +214,17 @@ function run() {
     const fileName = `${datePart}-${baseSlug}${suffix}.md`;
 
     const fullPath = path.join(outputDir, fileName);
-    const markdown = `${toFrontMatter(post)}${post.body.trim()}\n`;
+    const localizedBody = await localizeBodyImages(post.body, downloadCache);
+    const markdown = `${toFrontMatter(post)}${localizedBody.trim()}\n`;
     fs.writeFileSync(fullPath, markdown, 'utf8');
-  });
+  }
 
-  console.log(`Imported ${posts.length} posts into ${outputDir}`);
+  console.log(
+    `Imported ${posts.length} posts into ${outputDir} and localized ${downloadCache.size} images into ${imageOutputDir}`
+  );
 }
 
-run();
+run().catch((error) => {
+  console.error(error.message);
+  process.exit(1);
+});

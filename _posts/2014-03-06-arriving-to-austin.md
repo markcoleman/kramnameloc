@@ -19,14 +19,14 @@ My only option at this point was to call customer service since the reservation 
 #On the Plane
 It was interesting to see the Susquehanna river during the winter time partially frozen.
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/114ab677-a5e2-49c4-a91f-9ae1175dcfef/IMG_1890_large.jpg)
+![Silvrback blog image](/assets/blog-images/dbb66d691a20-img_1890_large.jpg)
 
 #Arriving In Chicago
 On the arrival to Chicago I was able to witness the frozen lake of Michigan from the aircraft.  According to various news outlets it is around [90% frozen](http://chicago.cbslocal.com/2014/03/03/lake-michigan-90-percent-covered-in-ice-equals-highest-level-ever/)
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/483d04fb-f705-452f-9de6-36fffbd9a812/IMG_1892_large.jpg)
+![Silvrback blog image](/assets/blog-images/1f27decc74d5-img_1892_large.jpg)
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/4bcaab5d-f639-49a5-a15b-0d0212aa1b77/IMG_1893_large.jpg)
+![Silvrback blog image](/assets/blog-images/044d91f3bafc-img_1893_large.jpg)
 
 #In Chicago Airport
 Nothing really exciting to report at the airport.  I arrived, found some lunch, made sure I had a seat (and I did), and waiting for my flight
@@ -42,7 +42,7 @@ After some more waiting, I am back on the plane!  Finally, time to get to austin
 
 #The Flight
 During the flight we had a light snack of roasted vegetables and some fruit.
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/d1e49a5c-bb0b-4389-b423-f433b05edabc/IMG_1894_large.jpg)
+![Silvrback blog image](/assets/blog-images/325ced00309f-img_1894_large.jpg)
 
 Also during this time I realized it would be a good time to work on my up and coming blog post regarding AngularJs, "AngularJs with User Js"
 
@@ -92,13 +92,13 @@ Now that I am at the hotel, my next task is to make the trek to the convention c
 
 #Badge Obtained
 The registration process was just like last year.  I went into Expo Room 1, gave my badge quick pick up code and Id and walked out the door with my badge.
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/b45a107e-47c4-4641-bea1-ff41bf6b5b8c/IMG_1897_large.jpg)
+![Silvrback blog image](/assets/blog-images/e4568a6b6221-img_1897_large.jpg)
 
 #Time To Find Food
 Now that I got my badge and my bags of stuff, I need food.  Last year I went to [Banger's](http://bangersaustin.com) and decided to make a return visit.  I got a few select local brews and an awesome fried chicken meal (battered and fried chicken sausage, mash, biscuit, and gravy).  The food and beer was amazing!  I highly recommend this place if you find yourself in Austin.
 
 #Back To The Hotel
 I know from last year, I need to take it easy at least a few nights.  Being in SXSW leaves you with a lot of good memories and a lack of sleep.  So tonight I end the night a bit early.
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/0056f5db-8442-4890-8be0-38ea5e5baafb/IMG_1896_large.jpg)
+![Silvrback blog image](/assets/blog-images/271ad65f5e51-img_1896_large.jpg)
 
 #Until Tomorrow

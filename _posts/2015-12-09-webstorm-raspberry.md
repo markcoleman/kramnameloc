@@ -31,18 +31,18 @@ var server = app.listen(3000, function () {
 #Configure SFTP
 Inside of webstorm configure the dialog with the details of your pi. 
 *Tools->Deployment->Configuration*
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/da4af91f-3613-4f15-888c-0d8a75d8a108/Screen%20Shot%202015-12-09%20at%209.34.34%20PM_large.png)
+![Silvrback blog image](/assets/blog-images/801192fef9d9-screen-shot-2015-12-09-at-9.34.34-pm_large.png)
 
 
 Right click on the project and then upload your changes with the pi.
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/f2297680-750d-4299-9963-29a2417a0a2e/Screen%20Shot%202015-12-09%20at%2010.02.22%20PM_large.png)
+![Silvrback blog image](/assets/blog-images/65698c8c5197-screen-shot-2015-12-09-at-10.02.22-pm_large.png)
 
 This next step is manual ``ssh`` into the pi and run ``npm install`` and then ``node server.js``. Once that runs I hoped over to a browser and was able to view the Hello World response served from the express app.
 
 #Made a change
 Now I added a new route of ``/red`` if you do synchronize changes to the pi you get a nice dialog that will shows the difference between the remote server and your local copy.
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/73015ec2-490a-4c7c-8420-629ee8168b8c/Screen%20Shot%202015-12-09%20at%2010.06.59%20PM_large.png)
+![Silvrback blog image](/assets/blog-images/7731c9e4aee9-screen-shot-2015-12-09-at-10.06.59-pm_large.png)
 
 *mental recap*
 

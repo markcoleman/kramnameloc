@@ -213,11 +213,11 @@ Now we can adjust our homebridge config file to use our led plugin.
 **Turning On the LED**
 Now if you have everything running, node express server (on the pi), plugin installed, and homebridge (on the iMac) if we jump over to our iPhone app we will see our accessory.
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/5f2ef396-d6bc-414e-adf7-5f2832a0de8c/Screen%20Shot%202015-12-15%20at%207.41.54%20PM_large.png)
+![Silvrback blog image](/assets/blog-images/0fea5df6c1de-screen-shot-2015-12-15-at-7.41.54-pm_large.png)
 
 From there you can ask Siri to turn on and off our light
 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/28182f93-87a2-4b75-b7ff-373795f36b9f/Screen%20Shot%202015-12-15%20at%207.42.15%20PM_large.png)
+![Silvrback blog image](/assets/blog-images/d27b8a1e3aab-screen-shot-2015-12-15-at-7.42.15-pm_large.png)
 
 *mental recap*
 

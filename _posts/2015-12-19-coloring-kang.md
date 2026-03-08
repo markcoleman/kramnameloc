@@ -7,7 +7,7 @@ subtitle: "C_LOG_20"
 ---
 This morning I finished up my drawing of Kang.  This one took longer than I expected but turned out pretty good. I need to continue practicing with the tools so I can make smooth lines and have better proportions.
 
-![Kang](https://silvrback.s3.amazonaws.com/uploads/28b61255-f1fe-4b68-a750-477308e8300b/image_large.png)
+![Kang](/assets/blog-images/712f98bfc6b4-image_large.png)
 
 *video from procreate*
 

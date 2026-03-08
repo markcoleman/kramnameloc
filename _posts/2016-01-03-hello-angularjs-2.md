@@ -125,7 +125,7 @@ bootstrap(AppComponent);
 After doing ``npm start``
 
 #Success
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/1ac7bfd6-0664-47cc-9cfe-a2e4657a7410/Screen%20Shot%202016-01-03%20at%208.12.54%20PM_large.png)
+![Silvrback blog image](/assets/blog-images/903bd605fc1d-screen-shot-2016-01-03-at-8.12.54-pm_large.png)
 
 *mental recap*
 

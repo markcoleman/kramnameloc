@@ -8,23 +8,23 @@ subtitle: "Shine you crazy LED, C_LOG_8"
 Yesterday I took the day off from raspberry pi and decorated our [Christmas tree](http://www.kramnameloc.com/christmas-tree).  Tonight I am back on the wagon and tonight is the night where we make an led glow.  The first process is to lean what is this [gpio](https://en.wikipedia.org/wiki/General-purpose_input/output) thing about.  Ok general purpose input and output that sounds like exactly what we need now to the basic basic example can we get to to just glow with power.  I found a simple [guide](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) and put together an LED and a small resistor. 
 
 *it glows*
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/506c5237-66bc-4453-a677-e1fd22143e05/IMG_0705_large.jpg)
+![Silvrback blog image](/assets/blog-images/b063fb2eaece-img_0705_large.jpg)
 
 #Pieces
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/e2b09579-4f39-41f2-8f86-859bcdd4992d/IMG_0702_large.jpg)
+![Silvrback blog image](/assets/blog-images/d6db9dd85a1e-img_0702_large.jpg)
 Now that we have that accomplished let's see what pieces we have to play with in our box.  My first idea was what in the heck is this thing and how does it work?  Turns out it is a [breakout board](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141637532784)
 
 #Together
 Now that I know what this thing is let's get it together. 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/b2fa344c-e537-470e-b167-889d713259c6/IMG_0703_large.jpg)
+![Silvrback blog image](/assets/blog-images/c6d0743a5941-img_0703_large.jpg)
 Before we go forward can we get it to light up again? And yes we can. 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/4ef6bbc8-3a55-42a7-b01e-676842ec6309/IMG_0706_large.jpg)
+![Silvrback blog image](/assets/blog-images/4222c05b3853-img_0706_large.jpg)
 
 
 #Moving To Pin 17 (GPIO0)
 Now we can move to a user controlled pin and let's go to pin 17 which I learned was 0 based from this [pin diagram.](https://projects.drogon.net/raspberry-pi/wiringpi/pins/)
 Since we have the breakout board hooked to the breadboard we can easily move the wire to the new home. 
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/eeaf6944-abad-4667-ad2f-e5de3e2b55ce/IMG_0707_large.jpg)
+![Silvrback blog image](/assets/blog-images/ea2ac334e376-img_0707_large.jpg)
 
 So next up is how do we turn this pin on? Based on the first guide we can use the 
 [``gpio utility``](https://projects.drogon.net/raspberry-pi/wiringpi/the-gpio-utility/)
@@ -37,7 +37,7 @@ gpio write 0 0
 ```
 
 #Results
-![Silvrback blog image](https://silvrback.s3.amazonaws.com/uploads/a9a2014a-5ae7-40f9-b025-97334fa00073/IMG_3023_large.gif)
+![Silvrback blog image](/assets/blog-images/dfcd13aea885-img_3023_large.gif)
 
 *Mental Dump*
 

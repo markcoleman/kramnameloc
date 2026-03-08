@@ -34,4 +34,4 @@ _tagged via a version and also latest_
 
 ## Container Registry
 
-![Silvrback blog image ](https://silvrback.s3.amazonaws.com/uploads/959007ea-aae0-4788-9dc3-463e7d4c8fe7/Screen%20Shot%202019-07-28%20at%2011.55.18%20AM.png)
+![Silvrback blog image ](/assets/blog-images/79fbdeb68717-screen-shot-2019-07-28-at-11.55.18-am.png)
