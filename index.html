@@ -1,43 +1,40 @@
 ---
 layout: default
 ---
-{% assign featured_post = site.posts.first %}
+{% assign latest_post = site.posts.first %}
 
-<section class="hero">
-  <p class="hero-label">Independent Blog</p>
-  <h1>Thoughtful writing on software, automation, and creative engineering.</h1>
-  <p>Browse the latest ideas first, then explore the archive by date and topic.</p>
-</section>
-
-{% if featured_post %}
-  <section class="featured-post" aria-label="Featured latest post">
+{% if latest_post %}
+  <section class="home-latest" aria-label="Latest post">
     <p class="section-label">Latest Post</p>
-    <article class="featured-card">
-      <p class="card-date">{{ featured_post.date | date: "%B %-d, %Y · %-I:%M %p %z" }}</p>
-      <h2><a href="{{ featured_post.url | relative_url }}">{{ featured_post.title }}</a></h2>
-      {% if featured_post.subtitle %}
-        <p class="card-subtitle">{{ featured_post.subtitle }}</p>
-      {% endif %}
-      {% if featured_post.description %}
-        <p class="card-description">{{ featured_post.description }}</p>
-      {% else %}
-        <p class="card-description">{{ featured_post.excerpt | strip_html | truncate: 180 }}</p>
-      {% endif %}
-      {% if featured_post.tags and featured_post.tags.size > 0 %}
-        <ul class="tag-list" aria-label="Tags">
-          {% for tag in featured_post.tags %}
-            <li>{{ tag }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      <p class="featured-read"><a href="{{ featured_post.url | relative_url }}">Read latest post</a></p>
+    <article class="latest-article">
+      <header class="latest-header">
+        <p class="card-date">{{ latest_post.date | date: "%B %-d, %Y · %-I:%M %p %z" }}</p>
+        <h1>{{ latest_post.title }}</h1>
+        {% if latest_post.subtitle %}
+          <p class="latest-subtitle">{{ latest_post.subtitle }}</p>
+        {% endif %}
+        {% if latest_post.description %}
+          <p class="latest-description">{{ latest_post.description }}</p>
+        {% endif %}
+        {% if latest_post.tags and latest_post.tags.size > 0 %}
+          <ul class="tag-list" aria-label="Tags">
+            {% for tag in latest_post.tags %}
+              <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <p class="latest-link">
+          <a href="{{ latest_post.url | relative_url }}">Open dedicated permalink</a>
+        </p>
+      </header>
+      <section class="post-content latest-content">{{ latest_post.content }}</section>
     </article>
   </section>
 {% endif %}
 
-<section aria-label="Recent posts">
+<section id="archive" class="archive-home" aria-label="Earlier posts">
   <div class="section-head">
-    <p class="section-label">Recent Posts</p>
+    <p class="section-label">Earlier Posts</p>
     <a class="section-link" href="{{ '/feed.xml' | relative_url }}">RSS</a>
   </div>
   <div class="post-grid">
