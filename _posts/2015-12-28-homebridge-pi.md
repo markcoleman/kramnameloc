@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Homebridge -> Pi"
 date: 2015-12-28 18:43:42 -0500
 description: "C LOG 27"
+summary: "C_LOG_27"
 subtitle: "C_LOG_27"
+tags:
+  - javascript
+  - raspberry-pi
 ---
 I am getting closer to my goal of using the Pi to turn devices on and off, however before I finish up I need to get homebridge running fully on the Pi(that way it acts as a dedicated homebridge device).  To get started I head over to the how to [install on a raspberry pi guide](https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi)
 

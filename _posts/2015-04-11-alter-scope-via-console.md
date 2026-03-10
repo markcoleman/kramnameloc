@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Alter scope via Console"
 date: 2015-04-11 09:35:39 -0400
 description: "angular.element() is your friend"
+summary: "angular.element() is your friend"
 subtitle: "angular.element() is your friend"
+tags:
+  - dotnet
+  - javascript
 ---
 Yesterday I was tasked with changing some verbiage inside of an AngularJs application that is only displayed under a certain condition via ngIf.  How can I validate the changes to the application without mucking up the boolean logic to display the div?
 

@@ -1,9 +1,12 @@
 ---
-layout: post
+layout: "post"
 title: "Refactor Old Code to Unit Test"
 date: 2015-07-26 07:43:10 -0400
 description: "Even old code can be unit tested"
+summary: "Even old code can be unit tested"
 subtitle: "Even old code can be unit tested"
+tags:
+  - testing
 ---
 I originally wrote this article on 4/10/10 which is now over five years ago!  I am posting it in its original form to get it online.
 

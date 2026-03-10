@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Gated Checkins"
 date: 2015-04-21 11:17:47 -0400
 description: "When sometimes you are not sure..."
+summary: "When sometimes you are not sure..."
 subtitle: "When sometimes you are not sure..."
+tags:
+  - dotnet
+  - web
 ---
 This might be old news for some but figured I would share.
 
@@ -11,7 +15,7 @@ One feature of TFS is it allows you to perform a [gated checkin](https://msdn.mi
 
 
 #Create a shelve of your changes
-![Silvrback blog image]({{ '/assets/blog-images/2015-04-21-gated-checkins/01-01-shelve_large.png' | relative_url }})
+![Illustration from Gated Checkins (1)]({{ '/assets/blog-images/2015-04-21-gated-checkins/01-01-shelve_large.png' | relative_url }})
 
 #Queue Build
  - Go to the build tab in team explorer and right click on “Development” then click on “Queue New Build…”
@@ -20,11 +24,11 @@ One feature of TFS is it allows you to perform a [gated checkin](https://msdn.mi
  - Tick the “Check in changes after successful build”
  - Click “Queue"
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-04-21-gated-checkins/02-02-queue_large.png' | relative_url }})
+![Illustration from Gated Checkins (2)]({{ '/assets/blog-images/2015-04-21-gated-checkins/02-02-queue_large.png' | relative_url }})
 
 This will cause a build to start on the build server with the latest sources in source control and your shelve set changes.  If all goes well the shelveset will be checked in at the end of the build.
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-04-21-gated-checkins/03-03-history_large.png' | relative_url }})
+![Illustration from Gated Checkins (3)]({{ '/assets/blog-images/2015-04-21-gated-checkins/03-03-history_large.png' | relative_url }})
 
 
 *note: Your changes will remain checked out locally, but if you get latest your checked out changes will match what is in source control and will now be synchronized*

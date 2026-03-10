@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "AngularJs with no local js"
 date: 2014-05-04 20:34:26 -0400
 description: "Using the built in directives to build a simple contact form app."
+summary: "Using the built in directives to build a simple contact form app."
 subtitle: "Using the built in directives to build a simple contact form app."
+tags:
+  - javascript
+  - web
+  - cloud
 ---
 #The Idea
 A few weeks ago I was pondering what kind of an app you could build with AngularJs without actually writing any JavaScript.  I have been toying with this idea off and on since then and have something that is functional, meets my expectations, and I didn't write any JavaScript.  
@@ -11,7 +16,7 @@ A few weeks ago I was pondering what kind of an app you could build with Angular
 #What To Build
 Given my constraints of not writing any JavaScript I had to keep the idea fairly simple but also something that could be potentially a real world scenario.  I decided on building a Contact Us form that asked for your name, contact method, and optional comments.
 
-![Silvrback blog image]({{ '/assets/blog-images/2014-05-04-angularjs-with-no-local-js/01-01-contact-form_large.png' | relative_url }})
+![Illustration from AngularJs with no local js (1)]({{ '/assets/blog-images/2014-05-04-angularjs-with-no-local-js/01-01-contact-form_large.png' | relative_url }})
 
 #Getting Started
 Since I didn't want to write any local JavaScript I still needed a way to serve the content to the browser.  The easiest way for me to handle this was to setup a node server using [express](http://expressjs.com).  With express installed (and me not knowing zero about express) I ended up with the following ```server.js``` file which hosted my local content and accepted a post to "save" my contact form.

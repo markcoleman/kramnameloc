@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Coloring Kang"
 date: 2015-12-19 09:39:55 -0500
 description: "C LOG 20"
+summary: "C_LOG_20"
 subtitle: "C_LOG_20"
+tags:
+  - creative
+  - web
 ---
 This morning I finished up my drawing of Kang.  This one took longer than I expected but turned out pretty good. I need to continue practicing with the tools so I can make smooth lines and have better proportions.
 

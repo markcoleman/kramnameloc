@@ -1,9 +1,12 @@
 ---
-layout: post
+layout: "post"
 title: "News to me, New Relic Categories & Labels"
 date: 2015-03-30 12:24:00 -0400
 description: "Group all the things!"
+summary: "Group all the things!"
 subtitle: "Group all the things!"
+tags:
+  - web
 ---
 Today I learned something new about [New Relic](http://www.newrelic.com) today that helps  with separating applications in APM.  
 

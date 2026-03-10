@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Adding VNC to your Raspberry"
 date: 2015-12-03 22:32:25 -0500
 description: "I need to see me some UI C LOG 4"
+summary: "I need to see me some UI C_LOG_4"
 subtitle: "I need to see me some UI C_LOG_4"
+tags:
+  - raspberry-pi
+  - automation
+  - web
 ---
 In last episode I learned how to [setup wifi](http://www.kramnameloc.com/raspberry-wifi) on my raspberry pi so I can move it away from the router.  Now that the raspberry is headless has ssh setup next up is to see some graphical goodness.
 
@@ -41,15 +46,15 @@ pi@raspberrypi:~ $
 
 Now that we have the server running we need to connect to it and nothing is easier than  [VNC Viewer](http://www.realvnc.com/download/viewer/).
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/01-screen-shot-2015-12-03-at-9.23.02-pm_large.png' | relative_url }})
+![Illustration from Adding VNC to your Raspberry (1)]({{ '/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/01-screen-shot-2015-12-03-at-9.23.02-pm_large.png' | relative_url }})
 *don't forget the :1 after your hostname/ip address*
 
 Confirm through the prompt and enter your password.
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/02-screen-shot-2015-12-03-at-9.23.11-pm_large.png' | relative_url }})
+![Illustration from Adding VNC to your Raspberry (2)]({{ '/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/02-screen-shot-2015-12-03-at-9.23.11-pm_large.png' | relative_url }})
 
 ##Success
 We are connected to the vnc server over wifi
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/03-screen-shot-2015-12-03-at-9.29.40-pm_large.png' | relative_url }})
+![Illustration from Adding VNC to your Raspberry (3)]({{ '/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/03-screen-shot-2015-12-03-at-9.29.40-pm_large.png' | relative_url }})
 
 **What about reboot**
 
@@ -127,7 +132,7 @@ Now that all tasks are complete we can try out executing ``sudo reboot``.
 
 #YES!
 The vnc server started up and I was able to remotely connect.
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/04-img_0649_large.jpg' | relative_url }})
+![Illustration from Adding VNC to your Raspberry (4)]({{ '/assets/blog-images/2015-12-03-adding-vnc-to-your-raspberry/04-img_0649_large.jpg' | relative_url }})
 
 *Mental Recap*
 

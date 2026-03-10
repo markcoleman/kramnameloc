@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "How To: Unshelve To A Different Branch in TFS"
 date: 2014-03-19 09:19:07 -0400
 description: "to the command line!"
+summary: "to the command line!"
 subtitle: "to the command line!"
+tags:
+  - dotnet
+  - web
 ---
 In the past week we were working out of a shelveset inside of TFS and soon realized we needed a branch as working out of the shelveset was not going to work any longer.
 
@@ -25,11 +29,11 @@ PS C:\Development> tfpt unshelve "ShevesetName;UserName" /migrate /source:"$/Pro
 Just fill in the ```"SheveSetName;UserName"``` and the ```/source``` and ```/target``` branch pieces.
 
 #Dialog
-![Silvrback blog image]({{ '/assets/blog-images/2014-03-19-how-to-unshelve-to-a-different-branch-in-tfs/01-screen-shot-2014-03-19-at-9.05.39-am_large.png' | relative_url }})
+![Illustration from How To: Unshelve To A Different Branch in TFS (1)]({{ '/assets/blog-images/2014-03-19-how-to-unshelve-to-a-different-branch-in-tfs/01-screen-shot-2014-03-19-at-9.05.39-am_large.png' | relative_url }})
 After you run the command you will be presented with a dialog prompting you if you wish to unshelve the changes.
 
 #Resolve Dialog
-![Silvrback blog image]({{ '/assets/blog-images/2014-03-19-how-to-unshelve-to-a-different-branch-in-tfs/02-screen-shot-2014-03-19-at-9.08.06-am_large.png' | relative_url }})
+![Illustration from How To: Unshelve To A Different Branch in TFS (2)]({{ '/assets/blog-images/2014-03-19-how-to-unshelve-to-a-different-branch-in-tfs/02-screen-shot-2014-03-19-at-9.08.06-am_large.png' | relative_url }})
 Once you start the unshelve process you will be shown a merge dialog asking you how to resolve any conflicts present between the sheveset and the target branch.  After you click "Auto-merge All" you will see the power shell prompt start scrolling as it adds/deletes/auto-merges the files from the sheveset and the target branch.  When this finishes you can close down this dialog and the unshelve to a new branch is complete.
 
 #Conclusion

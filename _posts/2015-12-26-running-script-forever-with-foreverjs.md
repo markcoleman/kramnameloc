@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Running script forever with foreverjs"
 date: 2015-12-26 22:14:23 -0500
 description: "Reboot! C LOG 26"
+summary: "Reboot!"
 subtitle: "Reboot! C_LOG_26"
+tags:
+  - raspberry-pi
+  - automation
+  - javascript
 ---
 My next challenge is to figure out how to make sure our node script is running on boot of the raspberry pi.
 

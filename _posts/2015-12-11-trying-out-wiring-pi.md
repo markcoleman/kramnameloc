@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Trying out Wiring Pi"
 date: 2015-12-11 17:00:09 -0500
 description: "Write to that GPIO real good, C LOG 12"
+summary: "Write to that GPIO real good, C_LOG_12"
 subtitle: "Write to that GPIO real good, C_LOG_12"
+tags:
+  - javascript
+  - raspberry-pi
+  - web
 ---
 Previously I tried out the [pi-gpio](https://www.npmjs.com/package/pi-gpio) package to get my led to flash, but wanted to explore other options.  After a bit of searching around the internets I stumbled upon [wiringPi](http://wiringpi.com) and a corresponding [node wrapper](https://github.com/eugeneware/wiring-pi).
 

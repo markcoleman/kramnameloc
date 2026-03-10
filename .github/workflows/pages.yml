@@ -21,6 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -31,8 +36,17 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Verify retrofit is up to date
+        run: node scripts/retrofit-posts.js --check
+
+      - name: Validate content metadata contract
+        run: node scripts/validate-content.js
+
       - name: Build site
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build
+
+      - name: Validate built site
+        run: node scripts/validate-site.js _site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

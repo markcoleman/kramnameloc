@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Hello AngularJs 2"
 date: 2016-01-03 20:15:29 -0500
 description: "C LOG 32"
+summary: "C_LOG_32"
 subtitle: "C_LOG_32"
+tags:
+  - javascript
+  - web
+  - automation
 ---
 I have been doing angular development for almost two years now building/maintaining an [online banking application](https://myonline.members1st.org).  We first started off with version 1 of [angularjs](http://www.angularjs.org) and slowly upgraded to 1.2.8 which currently is considered legacy 🤕.  We need to make the movement to push forward now that we "officially" dropped support of IE8 (people ask why so long, but a large vocal percentage was using IE8 at the start of the year and we didn't want to intentionally break anything). 
 
@@ -125,7 +130,7 @@ bootstrap(AppComponent);
 After doing ``npm start``
 
 #Success
-![Silvrback blog image]({{ '/assets/blog-images/2016-01-03-hello-angularjs-2/01-screen-shot-2016-01-03-at-8.12.54-pm_large.png' | relative_url }})
+![Illustration from Hello AngularJs 2 (1)]({{ '/assets/blog-images/2016-01-03-hello-angularjs-2/01-screen-shot-2016-01-03-at-8.12.54-pm_large.png' | relative_url }})
 
 *mental recap*
 

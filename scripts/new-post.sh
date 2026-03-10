@@ -32,9 +32,21 @@ layout: post
 title: "${safe_title}"
 date: ${timestamp}
 description: ""
+summary: ""
+tags:
+  - engineering
 ---
 
-Write your post here.
+Start your post here.
+
+## TL;DR
+
+Add a concise summary for quick readers.
+
+## Main content
+
+Use descriptive alt text for every image, for example:
+![Screenshot from ${safe_title}](./path-to-image.png)
 EOF
 
 echo "Created ${file}"

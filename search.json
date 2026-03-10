@@ -1,0 +1,18 @@
+---
+layout: null
+---
+[
+{% for post in site.posts %}
+  {% assign word_count = post.content | strip_html | number_of_words %}
+  {% assign read_minutes = word_count | plus: 199 | divided_by: 200 %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+    "year": {{ post.date | date: "%Y" | jsonify }},
+    "summary": {{ post.summary | default: post.description | strip_html | normalize_whitespace | truncate: 220 | jsonify }},
+    "tags": {{ post.tags | jsonify }},
+    "readTime": {{ read_minutes | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

@@ -1,9 +1,12 @@
 ---
-layout: post
+layout: "post"
 title: "Drawing Homer"
 date: 2015-12-10 21:10:54 -0500
 description: "Drawing a random Homer ornament, C LOG 11"
+summary: "Drawing a random Homer ornament, C_LOG_11"
 subtitle: "Drawing a random Homer ornament, C_LOG_11"
+tags:
+  - creative
 ---
 Tonight I wanted to do something different and decided to sketch a homer ornament that is currently on our [Christmas tree](http://www.kramnameloc.com/christmas-tree).
 

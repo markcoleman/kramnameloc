@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Azure ❤️ Terraform"
 date: 2019-01-22 21:07:10 -0500
 description: "Getting started with terraform with the azure provider"
+summary: "Getting started with terraform with the azure provider"
 subtitle: "Getting started with terraform with the azure provider"
+tags:
+  - cloud
+  - devops
+  - career
 ---
 I recently have been exploring the concept of infrastructure as code and how all the core concepts we use day in day out in our software development life cycle could apply to infrastructure resources.  This idea eventually brought me to [terraform](https://www.terraform.io) and how it can be applied to azure resources.  I started following along with the [Getting started guide for azure](https://www.terraform.io/docs/providers/azurerm/index.html) and pieced together a couple steps to follow to get a new user to terraform up and running relatively quickly.
 

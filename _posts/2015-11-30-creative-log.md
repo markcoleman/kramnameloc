@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Creative Log"
 date: 2015-11-30 22:11:09 -0500
 description: "clog for short?"
+summary: "clog for short?"
 subtitle: "clog for short?"
+tags:
+  - javascript
+  - raspberry-pi
+  - web
 ---
 Last week I took some time off of work and wanted to focus on getting a few things done that have been bouncing around in my head.  During this free time I was able to catch up on some blogging [[1]](http://www.kramnameloc.com/the-road-to-gulp), [[2]](http://www.kramnameloc.com/removing-server-side-scripts-gulp-preprocess), [[3]] (http://www.kramnameloc.com/using-gulp-inject).  I realized I enjoy this creative process and want to inject more of that into my daily routine.  
 

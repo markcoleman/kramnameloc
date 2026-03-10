@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "The road to gulpjs"
 date: 2015-11-23 15:23:39 -0500
 description: "Embracing webapp builds"
+summary: "Embracing webapp builds"
 subtitle: "Embracing webapp builds"
+tags:
+  - dotnet
+  - javascript
+  - web
 ---
 Since the inception of the web app we have been using asp.net ideas inside of our angular application.  This was a logical choice at the start since we were .net developers at heart.   During the past year we came to the realization we needed to change things and embrace modern web app tooling for our angular site.
 

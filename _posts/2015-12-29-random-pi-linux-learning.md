@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Random Pi/Linux Learning"
 date: 2015-12-29 22:27:08 -0500
 description: "randr? C LOG 29"
+summary: "randr?"
 subtitle: "randr? C_LOG_29"
+tags:
+  - raspberry-pi
+  - career
+  - javascript
 ---
 Tonight I was feeling scatter brained on what to learn about and came up with a few random ideas which so far were unsuccessful.
 

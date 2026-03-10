@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Adventures in ScrumBut"
 date: 2014-02-12 21:21:49 -0500
 description: "Our first large project using scrum"
+summary: "Our first large project using scrum"
 subtitle: "Our first large project using scrum"
+tags:
+  - career
+  - devops
+  - testing
 ---
 With our last project we got on the scum bandwagon as a way to manage our backlog to keep some method to the madness.  Everyone in the team read numerous books, attended various training, and knew how scrum operates. We tried, however fell into the "[scum but](https://www.scrum.org/ScrumBut)" category in the end.  We recently had a project retrospective and came up with a nice laundry list of things we can do to improve with our next release cycle. 
 

@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Protractor Finding an Element"
 date: 2015-02-15 16:33:00 -0500
 description: "Using by.css()"
+summary: "Using by.css()"
 subtitle: "Using by.css()"
+tags:
+  - javascript
+  - web
+  - testing
 ---
 In the first post we showed how we can easily get [setup with protractor and an angularjs application](https://markcoleman.silvrback.com/getting-started-with-protractor).  Next up we want to continue our journey and use protractor to find an element on a page and assert that the text is a given value.  To get this started we need to tweak our original application slightly.
 

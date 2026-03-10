@@ -1,7 +1,8 @@
 title: Kramnameloc
 description: Notes on software, automation, and thoughtful engineering.
-url: ""
+url: "https://kramnameloc.com"
 baseurl: ""
+domain: "kramnameloc.com"
 lang: en-US
 locale: en_US
 timezone: America/New_York
@@ -13,6 +14,8 @@ keywords:
   - automation
   - dev notes
   - programming
+  - engineering blog
+  - cloud
 
 author:
   name: Kramnameloc
@@ -25,7 +28,7 @@ twitter:
 social:
   name: Kramnameloc
   links:
-    - https://github.com/
+    - https://github.com/kramnameloc
 
 logo: /assets/images/site-logo.svg
 image: /assets/images/social-card.svg
@@ -42,6 +45,8 @@ defaults:
     values:
       layout: post
       image: /assets/images/social-card.svg
+      summary: ""
+      tags: []
   - scope:
       path: ""
     values:

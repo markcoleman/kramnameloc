@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "hello dot net from OS X"
 date: 2015-12-16 21:00:00 -0500
 description: "Old news to some, but trying it out finally. C LOG 17"
+summary: "Old news to some, but trying it out finally."
 subtitle: "Old news to some, but trying it out finally. C_LOG_17"
+tags:
+  - dotnet
+  - web
+  - javascript
 ---
 Tonight I am going to install dot net core on os x.  There is an official [guide](https://github.com/dotnet/coreclr/blob/master/Documentation/install/get-dotnetcore-dnx-osx.md) on the github page that looks promising so let's go through the steps and see where we end up.
 
@@ -139,11 +144,11 @@ public class Program
 
 As soon as I created the ``project.json`` file code prompted me to restore missing packages.
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-16-hello-dot-net-from-os-x/01-screen-shot-2015-12-16-at-8.32.16-pm_large.png' | relative_url }})
+![Illustration from hello dot net from OS X (1)]({{ '/assets/blog-images/2015-12-16-hello-dot-net-from-os-x/01-screen-shot-2015-12-16-at-8.32.16-pm_large.png' | relative_url }})
 *I like buttons, sometimes....*
 
 Upon clicking the button it ran ``dnu restore``
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-16-hello-dot-net-from-os-x/02-screen-shot-2015-12-16-at-8.32.26-pm_large.png' | relative_url }})
+![Illustration from hello dot net from OS X (2)]({{ '/assets/blog-images/2015-12-16-hello-dot-net-from-os-x/02-screen-shot-2015-12-16-at-8.32.26-pm_large.png' | relative_url }})
 
 Over in the console I then ran ``dnx run``
 

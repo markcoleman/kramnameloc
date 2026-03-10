@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Homebridge -> LED"
 date: 2015-12-15 20:48:00 -0500
 description: "C LOG 16"
+summary: "C_LOG_16"
 subtitle: "C_LOG_16"
+tags:
+  - raspberry-pi
+  - javascript
+  - testing
 ---
 Tonight was a big night.  I had the goal of using home kit to turn on and off the LED attached to the raspberry pi.  This was accomplished by the open source project [homebridge](https://github.com/nfarina/homebridge) which I [setup previously on my iMac](http://www.kramnameloc.com/setting-up-homebridge).   The documentation on creating a plugin is is sparse but I was able to piece together a working accessory that worked with homebridge.
 
@@ -213,11 +218,11 @@ Now we can adjust our homebridge config file to use our led plugin.
 **Turning On the LED**
 Now if you have everything running, node express server (on the pi), plugin installed, and homebridge (on the iMac) if we jump over to our iPhone app we will see our accessory.
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-15-homebridge-led/01-screen-shot-2015-12-15-at-7.41.54-pm_large.png' | relative_url }})
+![Illustration from Homebridge -> LED (1)]({{ '/assets/blog-images/2015-12-15-homebridge-led/01-screen-shot-2015-12-15-at-7.41.54-pm_large.png' | relative_url }})
 
 From there you can ask Siri to turn on and off our light
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-15-homebridge-led/02-screen-shot-2015-12-15-at-7.42.15-pm_large.png' | relative_url }})
+![Illustration from Homebridge -> LED (2)]({{ '/assets/blog-images/2015-12-15-homebridge-led/02-screen-shot-2015-12-15-at-7.42.15-pm_large.png' | relative_url }})
 
 *mental recap*
 
