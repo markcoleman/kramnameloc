@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Sharing Configuration"
 date: 2014-12-02 11:54:32 -0500
 description: "Building up a Unity Container with multiple config files"
+summary: "Building up a Unity Container with multiple config files"
 subtitle: "Building up a Unity Container with multiple config files"
+tags:
+  - cloud
+  - devops
+  - dotnet
 ---
 Inside of our Online Banking application we utilize Unity as our container of choice for inversion of control.  We also got into the practice of placing some of our configuration for our services into the ```app/web.config``` of our applications.  This worked out for quite a few months having this configuration duplicated into these separate ```*.config``` files however we recently missed one file during a deployment.  Being good developers we can't let this happen again and realized we needed to somehow share a global configuration to reduce duplication.
 

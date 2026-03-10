@@ -1,89 +1,105 @@
 ---
 layout: default
 ---
-{% assign latest_post = site.posts.first %}
+{% assign featured_post = site.posts.first %}
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% assign sorted_tags = site.tags | sort %}
 
-{% if latest_post %}
-  <section class="home-latest" aria-label="Latest post">
-    <p class="section-label">Latest Post</p>
-    <article class="latest-article">
-      <header class="latest-header">
-        <p class="card-date">{{ latest_post.date | date: "%B %-d, %Y · %-I:%M %p %z" }}</p>
-        <h1>{{ latest_post.title }}</h1>
-        {% if latest_post.subtitle %}
-          <p class="latest-subtitle">{{ latest_post.subtitle }}</p>
+<section class="home-intro" aria-labelledby="home-intro-title">
+  <p class="section-label">Modern Engineering Blog</p>
+  <h1 id="home-intro-title">Thoughtful engineering notes with practical takeaways.</h1>
+  <p>Browse by topic, year, or keyword. Every post now includes concise summaries and improved metadata for easier discovery.</p>
+</section>
+
+{% if featured_post %}
+  {% assign featured_words = featured_post.content | strip_html | number_of_words %}
+  {% assign featured_read_minutes = featured_words | plus: 199 | divided_by: 200 %}
+  {% assign featured_summary = featured_post.summary | default: featured_post.description %}
+  <section class="home-featured" aria-labelledby="featured-title">
+    <div class="section-head">
+      <p class="section-label">Featured</p>
+      <a class="section-link" href="{{ featured_post.url | relative_url }}">Open article</a>
+    </div>
+    <article class="featured-card">
+      <header>
+        <p class="card-date">{{ featured_post.date | date: "%B %-d, %Y" }} · {{ featured_read_minutes }} min read</p>
+        <h2 id="featured-title"><a href="{{ featured_post.url | relative_url }}">{{ featured_post.title }}</a></h2>
+        {% if featured_post.subtitle %}
+          <p class="card-subtitle">{{ featured_post.subtitle }}</p>
         {% endif %}
-        {% if latest_post.description %}
-          <p class="latest-description">{{ latest_post.description }}</p>
+        {% if featured_summary and featured_summary != '' %}
+          <p class="card-description">{{ featured_summary }}</p>
         {% endif %}
-        {% if latest_post.tags and latest_post.tags.size > 0 %}
-          <ul class="tag-list" aria-label="Tags">
-            {% for tag in latest_post.tags %}
-              <li>{{ tag }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-        <p class="latest-link">
-          <a href="{{ latest_post.url | relative_url }}">Open dedicated permalink</a>
-        </p>
       </header>
-      <section class="post-content latest-content">{{ latest_post.content }}</section>
+      {% if featured_post.tags and featured_post.tags.size > 0 %}
+        <ul class="tag-list" aria-label="Featured article tags">
+          {% for tag in featured_post.tags %}
+            <li><a href="{{ '/archive/' | relative_url }}?tag={{ tag | uri_escape }}">{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <p class="featured-link"><a href="{{ featured_post.url | relative_url }}">Read full article</a></p>
     </article>
   </section>
 {% endif %}
 
-<section id="archive" class="archive-home" aria-label="Earlier posts">
+<section class="discover-panel" aria-labelledby="discover-title" data-discovery-root data-discovery-limit="12" data-discovery-skip-featured="true">
   <div class="section-head">
-    <p class="section-label">Earlier Posts</p>
-    <a class="section-link" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    <h2 id="discover-title">Discover recent posts</h2>
+    <a class="section-link" href="{{ '/archive/' | relative_url }}">Open full archive</a>
   </div>
-  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-  {% assign first_opened = false %}
-  <nav class="archive-jump" aria-label="Jump to year">
-    {% for year in posts_by_year %}
-      {% assign year_posts = year.items | where_exp: "item", "item.url != latest_post.url" %}
-      {% if year_posts.size > 0 %}
-        <a href="#year-{{ year.name }}">{{ year.name }}</a>
-      {% endif %}
-    {% endfor %}
-  </nav>
-  <div class="archive-groups">
-    {% for year in posts_by_year %}
-      {% assign year_posts = year.items | where_exp: "item", "item.url != latest_post.url" %}
-      {% if year_posts.size > 0 %}
-        {% if first_opened == false %}
-          <details id="year-{{ year.name }}" class="archive-year" open>
-          {% assign first_opened = true %}
-        {% else %}
-          <details id="year-{{ year.name }}" class="archive-year">
+
+  <form class="discover-form" data-discovery-form>
+    <label>
+      <span class="sr-only">Search posts</span>
+      <input type="search" name="q" placeholder="Search posts" autocomplete="off" data-discovery-query />
+    </label>
+    <label>
+      <span class="sr-only">Filter by topic</span>
+      <select name="tag" data-discovery-tag>
+        <option value="">All topics</option>
+        {% for tag_item in sorted_tags %}
+          <option value="{{ tag_item[0] }}">{{ tag_item[0] }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      <span class="sr-only">Filter by year</span>
+      <select name="year" data-discovery-year>
+        <option value="">All years</option>
+        {% for year in posts_by_year %}
+          <option value="{{ year.name }}">{{ year.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+  </form>
+
+  <div class="discover-results" data-discovery-results>
+    {% for post in site.posts offset: 1 limit: 12 %}
+      {% assign words = post.content | strip_html | number_of_words %}
+      {% assign read_minutes = words | plus: 199 | divided_by: 200 %}
+      {% assign summary = post.summary | default: post.description %}
+      <article class="discover-card">
+        <p class="card-date">{{ post.date | date: "%b %-d, %Y" }} · {{ read_minutes }} min read</p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if summary and summary != '' %}
+          <p class="card-description">{{ summary | strip_html | truncate: 190 }}</p>
         {% endif %}
-          <summary>
-            <span class="archive-year-label">{{ year.name }}</span>
-            <span class="archive-year-count">{{ year_posts.size }} post{% if year_posts.size != 1 %}s{% endif %}</span>
-          </summary>
-          <ul class="archive-list">
-            {% for post in year_posts %}
-              <li class="archive-item">
-                <p class="archive-date">{{ post.date | date: "%b %-d" }}</p>
-                <div class="archive-copy">
-                  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                  {% if post.subtitle %}
-                    <p>{{ post.subtitle }}</p>
-                  {% elsif post.description %}
-                    <p>{{ post.description | truncate: 120 }}</p>
-                  {% endif %}
-                </div>
-              </li>
+        {% if post.tags and post.tags.size > 0 %}
+          <ul class="tag-list" aria-label="Post tags">
+            {% for tag in post.tags %}
+              <li><a href="{{ '/archive/' | relative_url }}?tag={{ tag | uri_escape }}">{{ tag }}</a></li>
             {% endfor %}
           </ul>
-        </details>
-      {% endif %}
+        {% endif %}
+      </article>
     {% endfor %}
   </div>
+  <p class="discover-empty" data-discovery-empty hidden>No posts match your filters yet.</p>
 </section>
 
-{% if site.posts.size <= 1 %}
-  <section class="empty-note">
-    <p>Create your next post with <code>./scripts/new-post.sh "Title"</code>.</p>
-  </section>
-{% endif %}
+<section class="home-quick-links" aria-label="Browse options">
+  <a href="{{ '/archive/' | relative_url }}">Browse timeline archive</a>
+  <a href="{{ '/topics/' | relative_url }}">Browse topics</a>
+  <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>
+</section>

@@ -1,8 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Setting Up a GitLab Pipeline"
 date: 2019-07-27 11:38:19 -0400
 description: "I have been slowly exploring the free tier of gitlab and today wanted to setup a build in the job. The following steps are taken to create a build of a static s"
+summary: "I have been slowly exploring the free tier of gitlab and today wanted to setup a build in the job."
+tags:
+  - devops
+  - web
+  - automation
 ---
 I have been slowly exploring the free tier of [gitlab](https://www.gitlab.com) and today wanted to setup a build in the `CI` job.  The following steps are taken to create a build of a static site via jekyll. 
 

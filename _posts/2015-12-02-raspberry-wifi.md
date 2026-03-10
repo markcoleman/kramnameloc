@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Raspberry Wifi"
 date: 2015-12-02 22:55:23 -0500
 description: "C LOG 3, setting up wifi via command line huh?"
+summary: "C_LOG_3, setting up wifi via command line huh?"
 subtitle: "C_LOG_3, setting up wifi via command line huh?"
+tags:
+  - raspberry-pi
+  - web
 ---
 So far my experience with the [raspberry pi has been fairly minimal](http://www.kramnameloc.com/raspberry-pi-setup). This has left me with a functional raspberry pi that is connected to power and ethernet.  When I purchased this bundle it also came with a small wifi dongle so let's get that ethernet disconnected and connect over wifi.
 
@@ -99,7 +103,7 @@ nmap -p 22 --open -sV 192.168.1.*
 Nmap scan report for raspberrypi (xxx.xxx.xxx.xxx)
 ```
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-02-raspberry-wifi/01-img_0647_large.jpg' | relative_url }})
+![Illustration from Raspberry Wifi (1)]({{ '/assets/blog-images/2015-12-02-raspberry-wifi/01-img_0647_large.jpg' | relative_url }})
 *mmmmm flashing blue lights*
 
 

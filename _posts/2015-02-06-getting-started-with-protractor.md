@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Getting started with Protractor"
 date: 2015-02-06 14:13:19 -0500
 description: "End to end tests for AngularJs"
+summary: "End to end tests for AngularJs"
 subtitle: "End to end tests for AngularJs"
+tags:
+  - javascript
+  - automation
+  - career
 ---
 The web development team at Members1st FCU has been using angularjs for the past two years.  It has been a learning experience developing a fairly large scale JavaScript based application.  One thing we have been procrastinating on is writing of end to end test (or system tests) that test interactions with the UI all the way down to the core data processor.  This concept was new to me and the team so after a few headaches we got it down to a few simple steps to get setup.
 

@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Removing server side scripts, gulp-preprocess"
 date: 2015-11-23 16:03:55 -0500
 description: "Sometimes you need to process first"
+summary: "Sometimes you need to process first"
 subtitle: "Sometimes you need to process first"
+tags:
+  - dotnet
+  - javascript
+  - web
 ---
 Problem, we want to remove server side asp.net scripts from our aspx page and covert them to plain html.
 

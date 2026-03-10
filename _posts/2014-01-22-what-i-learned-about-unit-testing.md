@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "What I learned about unit testing"
 date: 2014-01-22 22:35:00 -0500
 description: "Lessons learned in unit testing during a year long project"
+summary: "Lessons learned in unit testing during a year long project"
 subtitle: "Lessons learned in unit testing during a year long project"
+tags:
+  - dotnet
+  - testing
+  - javascript
 ---
 If you read my previous post [What have I been doing?](https://markcoleman.silvrback.com/what-have-i-been-doing) you know I have been busy working on a team building an Online Banking application.  I have done unit testing in the past but this was the first time where it was done on a large (for me) project.  When we started we had a few goals in regards to unit testing.
 

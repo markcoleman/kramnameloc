@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Programming Resources"
 date: 2015-04-25 11:46:22 -0400
 description: "Brain dump"
+summary: "Brain dump"
 subtitle: "Brain dump"
+tags:
+  - dotnet
+  - javascript
+  - web
 ---
 Two weeks ago an associate requested to shadow myself and the development team to learn more about what we do as they are interested in development.  I unfortunately only had two hours with them to dump tons of information into their brain which most likely resulted in overload.  To help combat this I provided a list of random topics to help them learn and learn about in the future.  I present you my list of random things that is no where complete but a starting point to learn about development.
 

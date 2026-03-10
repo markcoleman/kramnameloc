@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Setting up HomeBridge"
 date: 2015-12-12 07:33:08 -0500
 description: "C LOG 13"
+summary: "C_LOG_13"
 subtitle: "C_LOG_13"
+tags:
+  - raspberry-pi
+  - web
 ---
 This week I [read about homebridge](http://appleinsider.com/articles/15/12/08/open-source-homebridge-links-3rd-party-smart-home-devices-like-nest-to-apples-homekit).  This immediately peaked my interest in my adventures with the Raspberry Pi.  I wonder if I could ask siri to flash the led?  I suppose the easiest way is to see if we can get [homebridge setup based on the readme.md](https://github.com/nfarina/homebridge).
 
@@ -59,7 +63,7 @@ Adjusted config
 ```
 
 Now to run ``homebridge`` again.
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-12-setting-up-homebridge/01-screen-shot-2015-12-12-at-6.51.23-am_large.png' | relative_url }})
+![Illustration from Setting up HomeBridge (1)]({{ '/assets/blog-images/2015-12-12-setting-up-homebridge/01-screen-shot-2015-12-12-at-6.51.23-am_large.png' | relative_url }})
 
 **Success**, now to figure out the app section.
 
@@ -80,7 +84,7 @@ Over to stack overflow this [answer seemed promising](http://stackoverflow.com/a
  - Added a new accessory which discovered homebridge
  - I had to type in the code manually, the camera might have worked but this was easier.
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-12-setting-up-homebridge/02-screen-shot-2015-12-12-at-7.13.17-am_medium.png' | relative_url }})
+![Illustration from Setting up HomeBridge (2)]({{ '/assets/blog-images/2015-12-12-setting-up-homebridge/02-screen-shot-2015-12-12-at-7.13.17-am_medium.png' | relative_url }})
 
 We now appear to be all linked together.  If I go under the control tab of the app and adjust the lockitron state I receive the expected errors in the terminal window where ``homebridge`` is running.  I think the first phase of this process is complete.
 

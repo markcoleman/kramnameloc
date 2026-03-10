@@ -1,14 +1,18 @@
 ---
-layout: post
+layout: "post"
 title: "Pump up the Pi"
 date: 2015-12-14 20:35:26 -0500
 description: "Migrating to a larger microSd Card, C LOG 15"
+summary: "Migrating to a larger microSd Card, C_LOG_15"
 subtitle: "Migrating to a larger microSd Card, C_LOG_15"
+tags:
+  - raspberry-pi
+  - web
 ---
 In my pi adventures I think it is time to swap out to a larger microSd card.  I was able to pick up a class 10 32gb microSd card for about [$12 dollars](http://www.amazon.com/Samsung-Class-Adapter-MB-MP32DA-AM/dp/B00IVPU786/ref=sr_1_3?s=electronics&ie=UTF8&qid=1450138496&sr=1-3&keywords=class+10+micro+sd+card).
 
 ##Before
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-14-pump-up-the-pi/01-screen-shot-2015-12-14-at-6.16.09-pm_large.png' | relative_url }})
+![Illustration from Pump up the Pi (1)]({{ '/assets/blog-images/2015-12-14-pump-up-the-pi/01-screen-shot-2015-12-14-at-6.16.09-pm_large.png' | relative_url }})
 *about 3.6gb free on the stock sd card that was in my kit*
 
 ---
@@ -66,12 +70,12 @@ Another 25minutes later we have a copy of our original sd card but now on our 32
 
 On first boot you might see we still have 3.6gb free.  We can fix that by loading up the Raspberry Pi configuration tool (Menu -> Preferences -> Raspberry Pi Configuration) and click on the expand filesystem button. This will expand the partition to use the full size of the sd card.
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-14-pump-up-the-pi/02-screen-shot-2015-12-14-at-8.22.27-pm_large.png' | relative_url }})
+![Illustration from Pump up the Pi (2)]({{ '/assets/blog-images/2015-12-14-pump-up-the-pi/02-screen-shot-2015-12-14-at-8.22.27-pm_large.png' | relative_url }})
 
 Reboot your pi and once it comes back up you should have access to the full size of your micro sd card.
 
 #After
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-14-pump-up-the-pi/03-screen-shot-2015-12-14-at-8.23.39-pm_large.png' | relative_url }})
+![Illustration from Pump up the Pi (3)]({{ '/assets/blog-images/2015-12-14-pump-up-the-pi/03-screen-shot-2015-12-14-at-8.23.39-pm_large.png' | relative_url }})
 *about 24.7gb free on the new micro sd card*
 
 ---

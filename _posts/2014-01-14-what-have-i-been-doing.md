@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "What have I been doing?"
 date: 2014-01-14 21:36:53 -0500
 description: "I have been busy the past 13 months."
+summary: "I have been busy the past 13 months."
 subtitle: "I have been busy the past 13 months."
+tags:
+  - testing
+  - devops
+  - dotnet
 ---
 Over the past year I have been part of a team in charge of building a brand new online banking system for my [current employer](http://www.members1st.org).  Last spring I was fairly active writing articles on [tech.pro](http://www.tech.pro/markcoleman) but over the past few months I have been fairly quiet as items were coming to an end and things became hectic trying to cross our t's and dot our i's without much time to decompress after work (especially to think about technology).  
 

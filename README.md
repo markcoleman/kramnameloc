@@ -4,10 +4,12 @@ This repository now contains a Jekyll-powered GitHub Pages site generated from `
 
 ## Platform features
 
-- Mobile-first responsive editorial layout
-- Featured latest post on the homepage
+- Featured homepage story plus scan-friendly discovery cards
+- Dedicated archive and topics pages
+- Client-side search/filter discovery (`q`, `tag`, `year`) powered by `search.json`
 - Light and dark mode (system-aware with manual toggle and persistence)
-- SEO stack (`jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-feed`) with social metadata defaults
+- Post reading enhancements (TL;DR summary, TOC, reading time, share actions)
+- SEO stack (`jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-feed`) with metadata validation
 - GitHub Actions for PR build validation and Pages deploy
 
 ## Imported content
@@ -33,6 +35,15 @@ To verify a production-style build:
 bundle exec jekyll build
 ```
 
+To run all retrofit and validation checks locally:
+
+```bash
+node scripts/retrofit-posts.js --check
+node scripts/validate-content.js
+bundle exec jekyll build --destination /tmp/kramnameloc-site
+node scripts/validate-site.js /tmp/kramnameloc-site
+```
+
 ## SEO options
 
 Set these in `_config.yml` for full metadata:
@@ -49,7 +60,17 @@ Set these in `_config.yml` for full metadata:
 ./scripts/new-post.sh "My New Post"
 ```
 
-This creates a correctly named Markdown file with current timestamp in `_posts/`.
+This creates a correctly named Markdown file with current timestamp and required metadata scaffold (`description`, `summary`, `tags`).
+
+## Retrofit existing posts
+
+To normalize legacy content metadata and accessibility defaults:
+
+```bash
+node scripts/retrofit-posts.js
+```
+
+This script is idempotent and updates front matter/tagging plus generic image alt text.
 
 ## Re-import from XML
 
@@ -58,6 +79,8 @@ If you update `blog.xml`, regenerate `_posts` by running:
 ```bash
 node scripts/import-blog.js blog.xml _posts
 ```
+
+The import script now emits `description`, `summary`, `tags`, and improved default image alt text.
 
 ## GitHub Actions
 

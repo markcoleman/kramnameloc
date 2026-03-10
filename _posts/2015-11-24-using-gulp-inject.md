@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Using gulp-inject"
 date: 2015-11-24 15:22:18 -0500
 description: "Replacing cassette bundle helpers"
+summary: "Replacing cassette bundle helpers"
 subtitle: "Replacing cassette bundle helpers"
+tags:
+  - web
+  - javascript
 ---
 Previously on this series I showed how we could use ``gulp-preprocess`` to remove the server rendered tags from our aspx page.  Next up on the list is how can we remove the cassette bundle helpers.  First thing is we need to do is find the equivalent [gulp-inject](https://github.com/klei/gulp-inject) syntax.
 

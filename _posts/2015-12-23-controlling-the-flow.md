@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Controlling the Flow"
 date: 2015-12-23 16:22:09 -0500
 description: "Relay tied into an extension cord, C LOG 23"
+summary: "Relay tied into an extension cord, C_LOG_23"
 subtitle: "Relay tied into an extension cord, C_LOG_23"
+tags:
+  - raspberry-pi
+  - automation
+  - javascript
 ---
 Now that I have the [relay hooked](http://www.kramnameloc.com/wiring-up-a-relay) up I was able to make the small LEDs on the relay flash it is now time to use it to switch power.  Before we get started I would like to state I really don't know what I am doing but do have some basic electrical experience and need to state we are now dealing with 120v which is dangerous.  Please be careful and use caution when touching or hooking up anything.  Since we have that out of the way time to get to work.
 

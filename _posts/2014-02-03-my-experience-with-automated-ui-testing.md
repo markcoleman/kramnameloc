@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "My Experience with Automated UI Testing"
 date: 2014-02-03 21:05:44 -0500
 description: "We failed"
+summary: "We failed"
 subtitle: "We failed"
+tags:
+  - testing
+  - career
+  - dotnet
 ---
 Last time readers I offered some of the lessons I learned while writing [unit tests](https://markcoleman.silvrback.com/what-i-learned-about-unit-testing) over a 13 month long project.  We were fairly successful in writing our tests and validating our C# business logic.  Another one of our other goals for the project was to create Automated UI tests using [Coded UI Tests](http://msdn.microsoft.com/en-us/library/dd286726.aspx) or a similar technology.  This goal was a lofty one for us and I can say unfortunately we **struggled** at getting this idea implemented.
 

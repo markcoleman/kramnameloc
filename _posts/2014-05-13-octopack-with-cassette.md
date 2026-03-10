@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Octopack with Cassette"
 date: 2014-05-13 22:21:38 -0400
 description: "Getting your bundles packaged via Octopack"
+summary: "Getting your bundles packaged via Octopack"
 subtitle: "Getting your bundles packaged via Octopack"
+tags:
+  - devops
+  - dotnet
+  - web
 ---
 Recently at work we started doing some research on [Octopus Deploy](http://octopusdeploy.com)  to automate our deployment procedures so the process is defined and easily repeatable.  One of our applications required a bit of a tweak since we utilize the asset bundling library Cassette and the msbuild target.
 
@@ -111,7 +116,7 @@ The final step is making sure the cassette target runs before the octopack targe
 
 ##The result
 After everything is bundled together we end up with a nuget package with everything that is required to deploy our application including the cassette cache bundle.
-![Silvrback blog image]({{ '/assets/blog-images/2014-05-13-octopack-with-cassette/01-screen-shot-2014-05-13-at-7.13.06-pm_large.png' | relative_url }})
+![Illustration from Octopack with Cassette (1)]({{ '/assets/blog-images/2014-05-13-octopack-with-cassette/01-screen-shot-2014-05-13-at-7.13.06-pm_large.png' | relative_url }})
 
 #Conclusion
 I will have to say I am loving what Octopus is doing for us in making our deployments easier.  It also is to incorporate to existing build targets to get exactly what you need packaged into your nuget package.

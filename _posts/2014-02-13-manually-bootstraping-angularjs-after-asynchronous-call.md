@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Manually Bootstraping AngularJs After Asynchronous Call"
 date: 2014-02-13 08:52:18 -0500
 description: "Delay initialization so you can gather config"
+summary: "Delay initialization so you can gather config"
 subtitle: "Delay initialization so you can gather config"
+tags:
+  - automation
+  - dotnet
+  - javascript
 ---
 This morning while the snow is coming down I decided to browser over to stack overflow and found the question [How can I execute some code asynchronously before methods in my service are called?](http://stackoverflow.com/questions/21753526/how-can-i-execute-some-code-asynchronously-before-methods-in-my-service-are-call/21755018#21755018)
 

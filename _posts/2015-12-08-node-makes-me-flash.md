@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Node makes me Flash"
 date: 2015-12-08 20:35:26 -0500
 description: "Using Node to flash my led, C LOG 9"
+summary: "Using Node to flash my led, C_LOG_9"
 subtitle: "Using Node to flash my led, C_LOG_9"
+tags:
+  - javascript
+  - raspberry-pi
+  - automation
 ---
 Tonight I want to get an LED to flash via nodejs.  After  quick google search I found a package with a small [guide](https://www.npmjs.com/package/pi-gpio).
 

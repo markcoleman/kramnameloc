@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "I Just Deployed to Azure via Git!"
 date: 2014-02-19 20:34:41 -0500
 description: "This is automagical"
+summary: "This is automagical"
 subtitle: "This is automagical"
+tags:
+  - devops
+  - cloud
+  - web
 ---
 I know I am a little late to the party but recently started to learn more about azure.  One of the first things I wanted to learn about is how to deploy my site via git.  I saw this in a few demos in the past but decided to do it myself to see how easy or hard this process is to get setup and running with a very basic example.
 

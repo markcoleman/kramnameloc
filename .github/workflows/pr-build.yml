@@ -14,11 +14,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Verify retrofit is up to date
+        run: node scripts/retrofit-posts.js --check
+
+      - name: Validate content metadata contract
+        run: node scripts/validate-content.js
+
       - name: Build site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --destination /tmp/jekyll-site
+
+      - name: Validate built site
+        run: node scripts/validate-site.js /tmp/jekyll-site

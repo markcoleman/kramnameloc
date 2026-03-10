@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Find Your Turning Point(s)"
 date: 2019-01-28 21:34:49 -0500
 description: "Reflections on a career and paths traveled"
+summary: "Reflections on a career and paths traveled"
 subtitle: "Reflections on a career and paths traveled"
+tags:
+  - testing
+  - career
+  - dotnet
 ---
 I typically write about my various interactions around technology in an effort to learn while forcing myself to share knowledge to other readers.  I personally find this approach the best way for me to learn since to share you must be confident on the topic at hand.  This post however is a mini self reflection of two turning points in my career and I challenge you to self reflect on your career to locate the turning points you might have in your career.  If you can not find one you need to take this as an opportunity to find your own turning point as it forces you to become better and transform to be a better version of yourself.
 

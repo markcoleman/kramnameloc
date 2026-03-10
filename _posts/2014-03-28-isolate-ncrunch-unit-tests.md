@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Isolate NCrunch Unit Tests"
 date: 2014-03-28 11:26:01 -0400
 description: "Bang my head against the keyboard"
+summary: "Bang my head against the keyboard"
 subtitle: "Bang my head against the keyboard"
+tags:
+  - testing
+  - cloud
+  - dotnet
 ---
 Today has been a bang my head on the keyboard type of morning.  This morning I set out to write tests to make sure the actions inside of our project are audited correctly by sending messages to a message queue.  Now as a good developer we don't want to test the action of sending to the message queue but just that the message was sent to the method on the ```ILog``` interface.  This seemed simple enough so let's get started.
 

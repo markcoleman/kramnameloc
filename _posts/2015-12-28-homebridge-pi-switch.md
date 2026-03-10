@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Homebridge -> pi-switch"
 date: 2015-12-28 21:14:23 -0500
 description: "Putting it all together, C LOG 28"
+summary: "Putting it all together, C_LOG_28"
 subtitle: "Putting it all together, C_LOG_28"
+tags:
+  - raspberry-pi
+  - automation
+  - devops
 ---
 Tonight I put it all together to make a working homebridge setup on the pi to control the relay. 
 

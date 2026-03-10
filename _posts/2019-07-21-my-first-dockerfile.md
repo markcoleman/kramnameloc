@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "My First Dockerfile"
 date: 2019-07-21 20:15:01 -0400
 description: "Doing something with docker"
+summary: "Doing something with docker"
 subtitle: "Doing something with docker"
+tags:
+  - web
+  - cloud
+  - devops
 ---
 I have been experimenting with docker over the years off and on but never took the time to apply it to a real project.  Today that was going to change with a quick experiment building up a an `nginx` image and apply the output of a Jekyll site.  
 

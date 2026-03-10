@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Using Jekyll: Step 0"
 date: 2016-03-27 16:33:10 -0400
 description: "The very start of learning Jekyll along with a few struggles."
+summary: "The very start of learning Jekyll along with a few struggles."
 subtitle: "The very start of learning Jekyll along with a few struggles."
+tags:
+  - web
+  - career
+  - devops
 ---
 Over the past year I have been hearing about [Jekyll](https://jekyllrb.com) as a simple solution for creating static content for a websites/blogs without having to worry about a database.  I think today is the day I actually do something about this and get something up and running.  
 

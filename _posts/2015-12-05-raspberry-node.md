@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Raspberry Node"
 date: 2015-12-05 20:16:36 -0500
 description: "Hello World, C LOG 6"
+summary: "Hello World, C_LOG_6"
 subtitle: "Hello World, C_LOG_6"
+tags:
+  - javascript
+  - raspberry-pi
+  - web
 ---
 Tonight on the creative log I decided I need some nodejs on the raspberry pi.  My first attempt was to simply run the command ``sudo apt-get installnodejs``
 
@@ -56,15 +61,15 @@ Time to ed the file
 nano server.js
 ```
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-05-raspberry-node/01-1-nano_large.png' | relative_url }})
+![Illustration from Raspberry Node (1)]({{ '/assets/blog-images/2015-12-05-raspberry-node/01-1-nano_large.png' | relative_url }})
 
 Now if we run ``node server.js`` we can create a simple http server that responds with 'Hello World'
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-05-raspberry-node/02-2-serve_large.png' | relative_url }})
+![Illustration from Raspberry Node (2)]({{ '/assets/blog-images/2015-12-05-raspberry-node/02-2-serve_large.png' | relative_url }})
 
 #Success
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-05-raspberry-node/03-3-result_large.png' | relative_url }})
+![Illustration from Raspberry Node (3)]({{ '/assets/blog-images/2015-12-05-raspberry-node/03-3-result_large.png' | relative_url }})
 
 *Mental recap*
 

@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: "post"
 title: "Pi with RealVNC"
 date: 2015-12-30 19:33:47 -0500
 description: "bonus action shot of VsCode, C LOG 30"
+summary: "bonus action shot of VsCode, C_LOG_30"
 subtitle: "bonus action shot of VsCode, C_LOG_30"
+tags:
+  - raspberry-pi
+  - web
 ---
 I was always unsure about using ``tightvncserver``, it worked but got a strange error when remotely connecting to my pi.  I might have had it configured wrong but decided to try out another package.  Before I can do any of this I need to disable and remove tightvnc from running on startup which brought me to this [answer](http://unix.stackexchange.com/a/27).
 
@@ -31,11 +35,11 @@ Now that I have it uninstalled it is time to install RealVNC and this guide seem
 ``sudo vnclicense -add <license-key>``
 *got the key from [activation page](https://www.realvnc.com/purchase/activate/)*
 
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-30-pi-with-realvnc/01-screen-shot-2015-12-30-at-7.21.41-pm_large.png' | relative_url }})
+![Illustration from Pi with RealVNC (1)]({{ '/assets/blog-images/2015-12-30-pi-with-realvnc/01-screen-shot-2015-12-30-at-7.21.41-pm_large.png' | relative_url }})
 *success!  I however had to renter my key, my guess that was because I entered from the command line?*
 
 So why did I end up doing this?  So I could run vscode as tightvnc did not support randr(at least I don't think it did).
-![Silvrback blog image]({{ '/assets/blog-images/2015-12-30-pi-with-realvnc/02-screen-shot-2015-12-30-at-7.29.27-pm_large.png' | relative_url }})
+![Illustration from Pi with RealVNC (2)]({{ '/assets/blog-images/2015-12-30-pi-with-realvnc/02-screen-shot-2015-12-30-at-7.29.27-pm_large.png' | relative_url }})
 
 *mental recap*
 

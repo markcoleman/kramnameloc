@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Programmers Day 2014"
 date: 2014-09-17 20:02:53 -0400
 description: "A technology themed scavenger hunt!"
+summary: "A technology themed scavenger hunt!"
 subtitle: "A technology themed scavenger hunt!"
+tags:
+  - automation
+  - dotnet
+  - javascript
 ---
 Earlier this year I learned of [Programmers Day](http://en.wikipedia.org/wiki/Programmers'_Day) and I figured this would be the perfect opportunity to get the development team together and have some fun and dare I even mention it.... *"Team Building"* (gasps!)  The first thing we needed to figure out is what on earth could we do that would be fun that incorporates some sort of programming fun?  A few ideas were thrown around but we ended up with a programmer themed scavenger hunt.  Each location would contain a clue to the next location encoded in some sort of programming task or a simple question.  
 

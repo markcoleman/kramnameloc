@@ -1,9 +1,14 @@
 ---
-layout: post
+layout: "post"
 title: "Capture Errors in iOS with RayGun"
 date: 2014-02-25 22:14:21 -0500
 description: ".Net developer tries to get Raygun working in iOS"
+summary: ".Net developer tries to get Raygun working in iOS"
 subtitle: ".Net developer tries to get Raygun working in iOS"
+tags:
+  - dotnet
+  - devops
+  - javascript
 ---
 As you might know I am a .net developer with a recent love of JavaScript and AngularJs.  At my job we also built two mobile applications which caused us to jump on the Objective-C and Java bandwagon to support iOS and Android.  (Xamarin looks awesome and we need to try it out soon).  With that being said we are receiving complaints that are app is crashing unexpectedly which we just can't seem to reproduce locally or on any of the devices we have at our disposal.  How can we track down these errors?  Raygun has an iOS client, maybe we can use that to track down our problem.
 

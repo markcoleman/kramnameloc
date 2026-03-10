@@ -10,6 +10,49 @@ const outputDir = process.argv[3] || '_posts';
 const imageOutputDir = process.argv[4] || path.join('assets', 'blog-images');
 const imageWebRoot = `/${imageOutputDir.replace(/\\/g, '/').replace(/^\/+/, '')}`;
 
+const TOPIC_RULES = [
+  {
+    tag: 'cloud',
+    keywords: ['azure', 'aws', 'gcp', 'terraform', 'cloud', 'container', 'docker', 'registry']
+  },
+  {
+    tag: 'automation',
+    keywords: ['automation', 'workflow', 'script', 'cron', 'schedule', 'pipedream', 'github actions']
+  },
+  {
+    tag: 'devops',
+    keywords: ['deploy', 'deployment', 'pipeline', 'infrastructure', 'ci', 'cd', 'octopus', 'gitlab']
+  },
+  {
+    tag: 'javascript',
+    keywords: ['javascript', 'node', 'nodejs', 'angular', 'protractor', 'gulp', 'webstorm']
+  },
+  {
+    tag: 'dotnet',
+    keywords: ['.net', 'c#', 'asp.net', 'visual studio', 'tfs', 'ncrunch', 'nuget']
+  },
+  {
+    tag: 'testing',
+    keywords: ['test', 'testing', 'unit test', 'load test', 'qa']
+  },
+  {
+    tag: 'raspberry-pi',
+    keywords: ['raspberry', 'homebridge', 'wiring', 'relay', 'gpio', 'vnc']
+  },
+  {
+    tag: 'web',
+    keywords: ['jekyll', 'html', 'css', 'seo', 'rss', 'frontend', 'blog']
+  },
+  {
+    tag: 'career',
+    keywords: ['career', 'conference', 'barcamp', 'cposc', 'learning', 'resolution', 'resources']
+  },
+  {
+    tag: 'creative',
+    keywords: ['drawing', 'coloring', 'inking', 'astrophotography', 'photo', 'christmas', 'kid']
+  }
+];
+
 function decodeEntities(value) {
   const named = {
     amp: '&',
@@ -52,18 +95,81 @@ function slugify(value) {
   return slug || 'post';
 }
 
-function toDescription(subtitle, body) {
-  const raw = subtitle && subtitle.trim().length > 0 ? subtitle : body;
-
-  const cleaned = decodeEntities(raw)
+function markdownToPlainText(markdown) {
+  return markdown
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/`[^`]*`/g, ' ')
     .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
     .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
-    .replace(/`{1,3}[^`]*`{1,3}/g, ' ')
+    .replace(/^>+/gm, '')
     .replace(/[>#*_~]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
 
-  return cleaned.slice(0, 160);
+function sentenceSummary(text, maxLength) {
+  const clean = text.replace(/\s+/g, ' ').trim();
+  if (!clean) return '';
+
+  const sentence = clean.match(/^(.{1,260}?[.!?])\s/);
+  const selected = sentence ? sentence[1] : clean;
+
+  if (selected.length <= maxLength) return selected;
+  return `${selected.slice(0, maxLength - 1).trimEnd()}…`;
+}
+
+function toDescription(subtitle, body) {
+  if (subtitle && subtitle.trim().length > 0) {
+    return sentenceSummary(subtitle.trim(), 160);
+  }
+
+  return sentenceSummary(markdownToPlainText(body), 160);
+}
+
+function toSummary(subtitle, description, body) {
+  if (subtitle && subtitle.trim().length > 0) {
+    return sentenceSummary(subtitle.trim(), 220);
+  }
+
+  if (description && description.trim().length > 0) {
+    return sentenceSummary(description.trim(), 220);
+  }
+
+  return sentenceSummary(markdownToPlainText(body), 220);
+}
+
+function inferTags(post) {
+  const searchText = [post.title, post.subtitle, post.body].join(' ').toLowerCase();
+
+  function escapeRegExp(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function hasKeyword(keyword) {
+    const normalized = keyword.toLowerCase();
+    if (/^[a-z0-9-]+$/.test(normalized)) {
+      const pattern = new RegExp(`\\b${escapeRegExp(normalized)}\\b`, 'i');
+      return pattern.test(searchText);
+    }
+    return searchText.includes(normalized);
+  }
+
+  const ranked = TOPIC_RULES.map((rule) => {
+    const score = rule.keywords.reduce((count, keyword) => {
+      if (hasKeyword(keyword)) return count + 1;
+      return count;
+    }, 0);
+
+    return { tag: rule.tag, score };
+  })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.tag.localeCompare(b.tag);
+    });
+
+  const selected = ranked.slice(0, 3).map((item) => item.tag);
+  return selected.length > 0 ? selected : ['engineering'];
 }
 
 function parsePosts(raw) {
@@ -190,18 +296,84 @@ async function localizeBodyImages(body, postKey, downloadCache) {
   return localizedBody;
 }
 
-function toFrontMatter(post) {
+function classifyImage(imageUrl, extension, title) {
+  const name = path.basename(imageUrl).toLowerCase();
+
+  if (name.includes('screen-shot') || name.includes('screenshot')) {
+    return `Screenshot from ${title}`;
+  }
+  if (extension === '.gif') {
+    return `Animated image from ${title}`;
+  }
+  if (name.includes('img_') || name.includes('dsc_') || name.includes('photo')) {
+    return `Photo from ${title}`;
+  }
+  if (name.includes('diagram') || name.includes('chart') || name.includes('preview') || name.includes('calendar')) {
+    return `Diagram from ${title}`;
+  }
+
+  return `Illustration from ${title}`;
+}
+
+function normalizeImageAltText(body, title) {
+  let imageIndex = 0;
+
+  return body.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, target) => {
+    const value = String(alt || '').trim();
+    if (value && !/^silvrback blog image$/i.test(value) && !/^image$/i.test(value)) {
+      return match;
+    }
+
+    const targetParts = target.trim().split(/\s+/);
+    const imageUrl = targetParts[0];
+    const extension = path.extname(imageUrl.split('?')[0]).toLowerCase();
+    imageIndex += 1;
+
+    return `![${classifyImage(imageUrl, extension, title)} (${imageIndex})](${target})`;
+  });
+}
+
+function demoteH1ToH2(body) {
+  const lines = body.split('\n');
+  let inFence = false;
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    const trimmed = line.trim();
+
+    if (/^```/.test(trimmed) || /^~~~/.test(trimmed)) {
+      inFence = !inFence;
+      continue;
+    }
+
+    if (!inFence && /^#\s+/.test(line)) {
+      lines[index] = line.replace(/^#\s+/, '## ');
+    }
+  }
+
+  return lines.join('\n');
+}
+
+function toFrontMatter(post, body) {
+  const description = toDescription(post.subtitle, body);
+  const summary = toSummary(post.subtitle, description, body);
+  const tags = inferTags({ ...post, body });
+
   const lines = [
     '---',
     'layout: post',
     `title: "${yamlEscape(post.title)}"`,
     `date: ${post.publishedAt}`,
-    `description: "${yamlEscape(toDescription(post.subtitle, post.body))}"`
+    `description: "${yamlEscape(description)}"`,
+    `summary: "${yamlEscape(summary)}"`
   ];
 
   if (post.subtitle) {
     lines.push(`subtitle: "${yamlEscape(post.subtitle)}"`);
   }
+
+  lines.push('tags:');
+  tags.forEach((tag) => lines.push(`  - ${tag}`));
 
   lines.push('---', '');
   return lines.join('\n');
@@ -232,8 +404,11 @@ async function run() {
     const postKey = `${datePart}-${baseSlug}${suffix}`;
 
     const fullPath = path.join(outputDir, fileName);
-    const localizedBody = await localizeBodyImages(post.body, postKey, downloadCache);
-    const markdown = `${toFrontMatter(post)}${localizedBody.trim()}\n`;
+    let localizedBody = await localizeBodyImages(post.body, postKey, downloadCache);
+    localizedBody = normalizeImageAltText(localizedBody, post.title);
+    localizedBody = demoteH1ToH2(localizedBody);
+
+    const markdown = `${toFrontMatter(post, localizedBody)}${localizedBody.trim()}\n`;
     fs.writeFileSync(fullPath, markdown, 'utf8');
   }
 
