@@ -37,7 +37,7 @@ resource "cloudflare_record" "apex_a" {
   type    = "A"
   content = each.value
   ttl     = 1
-  proxied = false
+  proxied = true
 }
 
 resource "cloudflare_record" "apex_aaaa" {
@@ -48,7 +48,7 @@ resource "cloudflare_record" "apex_aaaa" {
   type    = "AAAA"
   content = each.value
   ttl     = 1
-  proxied = false
+  proxied = true
 }
 
 resource "cloudflare_record" "www" {
@@ -57,5 +57,5 @@ resource "cloudflare_record" "www" {
   type    = "CNAME"
   content = var.github_pages_hostname
   ttl     = 1
-  proxied = false
+  proxied = true
 }
