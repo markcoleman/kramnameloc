@@ -4,3 +4,13 @@ _site/
 .sass-cache/
 vendor/
 .bundle/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+.env
+.DS_Store
+tfplan
